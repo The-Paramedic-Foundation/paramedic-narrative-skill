@@ -2,7 +2,7 @@
 
 **The Paramedic Foundation**
 Published under Creative Commons Attribution 4.0 International (CC BY 4.0)
-paramedicfoundation.org · Version 1.0.0
+paramedicfoundation.org · Version 1.1.0
 
 ---
 
@@ -415,7 +415,7 @@ paramedicfoundation.org.
 Suggested citation:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 1.0.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 1.1.0) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---

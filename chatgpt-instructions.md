@@ -1,5 +1,5 @@
 # Paramedic-Narrative — ChatGPT Instructions
-## The Paramedic Foundation · CC BY 4.0 · Version 1.0.0
+## The Paramedic Foundation · CC BY 4.0 · Version 1.1.0
 ## For use in the ChatGPT Custom GPT Instructions field (fits within 8,000 characters)
 ## Upload SKILL.md as a Knowledge File alongside these instructions.
 

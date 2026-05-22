@@ -1,7 +1,7 @@
 # Paramedic-Narrative Skill — Agency Configuration Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 1.0.0
+paramedicfoundation.org · Version 1.1.0
 
 ---
 
@@ -410,5 +410,5 @@ by authorized providers under the medical direction of [Medical Director Name].*
 *paramedicfoundation.org · info@paramedicfoundation.org*
 
 *Cite as: Nudell, N. G. (2026). Paramedic-Narrative skill — agency configuration*
-*template (Version 1.0.0) [Software configuration template]. The Paramedic*
+*template (Version 1.1.0) [Software configuration template]. The Paramedic*
 *Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill*
