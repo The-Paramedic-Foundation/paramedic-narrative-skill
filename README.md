@@ -83,15 +83,18 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 ├── README.md                       ← this file -- start here
 ├── ETHICS.md                       ← ethical framework -- read before use
 ├── LICENSE.md                      ← CC BY 4.0 license terms
-├── system-prompt.md                ← the tool instructions for ChatGPT, Gemini,
-│                                     or any other AI platform
+├── system-prompt.md                ← full system prompt for Gemini, direct API,
+│                                     and any platform without a character limit
+├── chatgpt-instructions.md         ← condensed instructions for ChatGPT Custom
+│                                     GPTs (fits the 8,000 character limit)
 ├── paramedic-narrative.skill       ← the install file for Claude specifically
 ├── agency-config-template.md       ← standardized configuration template for
 │                                     agencies and medical directors to complete
 ├── provider-profile-template.md    ← personal provider profile template --
 │                                     one per provider, never shared
 └── paramedic-narrative/            ← folder containing the source files
-    ├── SKILL.md                    ← full clinical instructions (human-readable)
+    ├── SKILL.md                    ← full clinical reference standard -- upload
+    │                                 this as a Knowledge File in ChatGPT
     └── references/
         └── documentation-standards-primer.md  ← detailed documentation
                                                   standards reference
@@ -99,7 +102,8 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 
 **You only need one or two of these depending on who you are:**
 - **Line provider using Claude**: download `paramedic-narrative.skill`
-- **Line provider using ChatGPT or Gemini**: open `system-prompt.md` and copy its contents
+- **Line provider using ChatGPT**: see the ChatGPT two-file setup below
+- **Line provider using Gemini or another platform**: open `system-prompt.md` and copy its contents
 - **New provider setting up their profile**: open `provider-profile-template.md`
   (or say "build my provider profile" to the skill and it will guide you)
 - **Agency administrator or medical director**: open `agency-config-template.md`
@@ -135,14 +139,18 @@ Here is the simplest possible path to get started:
 
 **If you use ChatGPT:**
 
-1. On this page, click the file called `system-prompt.md`.
-2. Click the copy icon (two overlapping squares) in the top right of the file.
-   This copies all the text.
-3. In ChatGPT, go to **Explore GPTs > Create > Configure** and paste the copied
-   text into the **Instructions** field.
-4. Give it a recognizable name -- something like **Paramedic Narratives** or
-   **PCR Assistant** -- so you can find it quickly from your ChatGPT home screen.
-5. Click **Save**. Use that Custom GPT for every documentation session.
+ChatGPT Custom GPTs have a character limit on the Instructions field. Paramedic-Narrative
+uses a two-file setup to work around this -- a condensed instructions file and a
+Knowledge File containing the full clinical reference standard.
+
+1. On this page, click the file called `chatgpt-instructions.md`. Click the copy icon.
+2. In ChatGPT, go to **Explore GPTs > Create > Configure** and paste the copied text
+   into the **Instructions** field.
+3. Still in the Configure panel, scroll down to **Knowledge** and click **Upload files**.
+4. Download `paramedic-narrative/SKILL.md` from this repository and upload it as a
+   Knowledge File. This gives the GPT access to the full clinical documentation standard.
+5. Give it a recognizable name -- **Paramedic Narratives** or **PCR Assistant**.
+6. Click **Save**. Use that Custom GPT for every documentation session.
 
 **If you use Google Gemini:**
 
@@ -237,13 +245,32 @@ data handling policies.
 5. Optionally upload your agency documentation standard as a Project file
    (see [Configuration](#configuration))
 
-### ChatGPT (Custom GPT)
+### ChatGPT (Custom GPT -- two-file setup)
 
-1. Copy the full contents of `system-prompt.md` from this repository
+ChatGPT Custom GPTs have a character limit on the Instructions field. Paramedic-Narrative
+addresses this with a two-file setup: a condensed instructions file in the Instructions
+field, and the full clinical reference standard uploaded as a Knowledge File.
+
+**Instructions field:**
+1. Open `chatgpt-instructions.md` in this repository and copy its full contents
 2. In ChatGPT, go to Explore GPTs > Create > Configure
-3. Paste the contents into the Instructions field
-4. Optionally paste your agency documentation standard below the pasted instructions
-5. Save your Custom GPT
+3. Paste the contents into the **Instructions** field
+
+**Knowledge File:**
+4. Download `paramedic-narrative/SKILL.md` from this repository
+5. In the Configure panel, scroll to **Knowledge** and click **Upload files**
+6. Upload `SKILL.md` -- this gives the GPT the full clinical documentation standard
+
+**Finish setup:**
+7. Optionally paste your agency configuration below the instructions, or upload it
+   as an additional Knowledge File
+8. Give the GPT a recognizable name and save
+
+**Why two files?** The Instructions field holds the behavioral rules -- how the tool
+thinks and what it refuses to do. The Knowledge File holds the clinical reference
+content -- scoring tools, medication documentation standard, forensic standard,
+vital thresholds, and handoff frameworks. The GPT consults the Knowledge File during
+conversation without it counting against the Instructions character limit.
 
 ### Google Gemini (Gem)
 
@@ -277,6 +304,10 @@ context at the start of any session:
 > [protocol system name]. My medical director is [name]."
 
 The skill will apply that context for the session.
+
+**For ChatGPT specifically:** paste your agency configuration below the instructions
+in the Configure panel, or upload it as an additional Knowledge File alongside
+`SKILL.md`. Both approaches work.
 
 ### For agencies and medical directors
 

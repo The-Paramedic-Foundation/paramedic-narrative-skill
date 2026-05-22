@@ -63,26 +63,239 @@ Improvements may be submitted via GitHub Issues for consideration in future vers
 
 ---
 
+## Context Architecture
+
+This skill operates with three layers of context. Understanding the layers is
+important for providers who work for multiple organizations or in multiple roles.
+
+```
+PROVIDER LAYER    Who you are -- persistent across all sessions and agencies
+AGENCY LAYER      Where you are working -- swappable per session
+SESSION LAYER     What you are doing right now -- active call type and role
+```
+
+These layers are independent. Switching agencies does not change who you are.
+Switching roles does not change which agency's protocols apply. All three can be
+active simultaneously.
+
+---
+
+## Provider Layer: Provider Profile
+
+The provider profile is a file the individual paramedic creates once and uploads
+permanently to their Claude Project. It persists across all sessions, all agencies,
+and all role contexts. It is the provider's standing identity within the skill.
+
+**File name:** `provider-profile.md`
+
+**What it contains:**
+- Name and credential (NRP, EMT-B, AEMT, CP-C, FP-C, CCP-C, or equivalent)
+- License number and state (optional -- for transfer-of-care documentation)
+- All agencies the provider works for, with short names for org-switch commands
+- All role contexts the provider operates in (see Role Contexts below)
+- Any standing documentation preferences (abbreviation style, preferred phrasing,
+  recurring clinical context)
+
+**To build your provider profile:** say "I want to set up my provider profile"
+and the skill will guide you through a short conversation to generate the file.
+See Provider Profile Builder section below.
+
+**When a provider profile is loaded**, the skill addresses the provider by name,
+knows their credential level, and applies their documented preferences automatically
+without being asked. The profile is not re-confirmed at the start of each session --
+it is always active.
+
+---
+
+## Agency Layer: Agency Configuration
+
+The agency configuration tells the skill which organization's protocols,
+documentation standards, ePCR platform, medical director, and controlled substance
+policy are active. One configuration file per agency.
+
+**File naming convention:**
+```
+agency-config-[short-name].md
+```
+Examples:
+```
+agency-config-uchealth-ems.md
+agency-config-ncretac.md
+agency-config-county-fire.md
+```
+
+**Loading an agency configuration:**
+- Upload the file to your Claude Project alongside the skill
+- For multiple agencies, upload all configuration files at once
+- The skill detects all loaded configuration files and knows which agencies
+  are available
+- At the start of a session, if no agency is specified, the skill asks which
+  agency context is active
+- If only one configuration file is loaded, it is applied automatically
+
+**Org-switch command:**
+At any point in a session, say:
+> "Switch to [agency short name]" or "I'm working for [agency] today"
+
+The skill will:
+1. Confirm which configuration it is switching to and what will change
+2. Preserve the provider layer completely -- identity, preferences, all standing
+   context
+3. Apply the new agency's protocols, ePCR platform, documentation standard,
+   controlled substance policy, and prompt settings
+4. Confirm the switch is complete and state the now-active agency
+
+**When no configuration file is loaded**, the skill applies universal paramedicine
+documentation standards and asks once at session start for basic agency context.
+It does not ask repeatedly.
+
+---
+
+## Session Layer: Role Context
+
+The session layer activates when the provider states which role they are working in
+for this encounter. Role context changes which documentation framework, which prompt
+set, and which disposition options the skill applies.
+
+**Available role contexts:**
+
+### Emergency Paramedic
+Standard 911 emergency response. Full SOAP narrative with ABC/LOC cluster, all
+scoring tools, forensic standard when applicable, IMIST-AMBO handoff, ATLS trauma
+standard. Transport destination is typically an emergency department. Care pathway
+documentation applies for low-acuity calls, refusals, and cancellations.
+
+### Rescue Paramedic
+Technical rescue, wilderness, confined space, water rescue, or other special
+operations contexts. Additional documentation elements: rescue mechanism and
+environment, technical rescue techniques applied, extrication time and method,
+scene safety and hazard documentation, specialized equipment used. Injury patterns
+specific to rescue mechanisms documented with mechanism-of-injury detail. Extended
+scene time rationale documented. May involve multi-agency coordination requiring
+detailed role attribution.
+
+### Community Paramedic
+Scheduled or unscheduled community paramedicine or mobile integrated health visits.
+Documentation framework shifts from emergency response to longitudinal care:
+visit reason and referral source, assessment of functional status and social
+determinants, medication adherence and management, connection to resources,
+care plan documentation, and next scheduled contact. Scoring tools emphasize
+functional assessment, fall risk, and behavioral health. Transport is not the
+default outcome -- alternative dispositions and referral pathways are primary.
+Barriers to care documentation is always active. Care pathway documentation applies
+to every visit.
+
+### Hospital Paramedic
+In-hospital response, critical care transport (CCT), interfacility transport, or
+procedure support. Documentation framework emphasizes: pre-transport assessment and
+stability, transport indication and medical necessity for the level of transport,
+equipment and monitoring during transport, any interventions en route, condition
+on arrival, and structured handoff to receiving team. Scope-of-practice context
+may differ from field paramedicine -- document under the protocols and medical
+direction active for the hospital or transport program. Critical care scoring tools
+(ventilator settings, vasoactive medications, invasive monitoring values) are
+relevant. IMIST-AMBO handoff standard applies.
+
+**Activating a role context:**
+Say "I'm working an emergency shift," "I'm doing community paramedicine today,"
+"This is a CCT run," or "I'm on rescue today." The skill confirms the active role
+context and adjusts its framework accordingly.
+
+**Multiple roles in one session:**
+If a provider transitions between roles during a session (e.g., responds to an
+emergency while on a community paramedicine shift), state the transition:
+"I'm switching to emergency mode for this call." The skill applies the emergency
+framework for that narrative and returns to community paramedicine context
+when complete.
+
+---
+
+## Provider Profile Builder
+
+**Trigger:** Say "I want to set up my provider profile" or "build my provider
+profile."
+
+**What happens:**
+The skill guides the provider through a short structured conversation -- one topic
+at a time, no walls of form fields. It asks about:
+
+1. Name and credential
+2. License and state (optional)
+3. Agencies worked for and short names for each
+4. Role contexts used (emergency, rescue, community, hospital, or combinations)
+5. Any standing documentation preferences
+
+The skill then produces a completed `provider-profile.md` file ready to download
+and upload to the Claude Project. For ChatGPT and Gemini, it produces a clearly
+delimited block to paste into the custom instructions below the system prompt.
+
+**Updating a provider profile:**
+Say "update my provider profile" and specify what has changed. The skill will
+produce an updated file.
+
+---
+
+## Agency Configuration Builder
+
+**Trigger:** Say "I want to set up agency configuration," "configure a new agency,"
+or "build an agency config file."
+
+**Access confirmation:**
+Before entering configuration mode, the skill confirms:
+- Whether this is a new configuration or an update to an existing one
+- The name of the agency being configured
+- Whether the person is an authorized administrator or medical director
+
+**If updating an existing configuration**, the skill issues this warning before
+proceeding:
+
+> **Warning:** You are updating an agency configuration file. Changes to this file
+> will affect the documentation standard applied by every provider in your agency
+> who uses it. Before proceeding, confirm that: (1) you are authorized to make
+> this change, (2) your medical director has reviewed the proposed changes, and
+> (3) you have a plan to distribute the updated file to all affected providers.
+> Type "I confirm" to proceed.
+
+**What happens after confirmation:**
+The skill guides the administrator through each section of the configuration
+template in a structured conversation -- one section at a time. For each section:
+
+- It explains what the section covers and why it matters
+- It asks the relevant questions
+- It accepts uploaded files and extracts the relevant information automatically:
+  - Protocol PDF → extracts protocol titles by call type for Section 5
+  - Controlled substance SOP → extracts policy elements for Section 6
+  - Documentation standard SOP → extracts requirements for Section 4
+  - Existing agency-config file → loads it and asks what needs to change
+- It confirms what it captured before moving to the next section
+- It allows corrections at any point
+
+**Output:**
+When all sections are complete, the skill produces:
+1. A completed `agency-config-[short-name].md` file formatted exactly to the
+   template standard, ready to download
+2. A brief distribution checklist: where to host it, how to notify providers,
+   when to schedule the next review
+
+For ChatGPT and Gemini, the completed configuration is produced as a clearly
+delimited copy-paste block.
+
+**Sections covered in the builder conversation:**
+1. Agency identity and service area
+2. Medical director endorsement (the skill prompts the MD to review and affirm
+   each commitment before the endorsement is recorded)
+3. ePCR platform
+4. Documentation standard and minimum narrative requirements
+5. Protocols and CPGs (with file upload option)
+6. Controlled substance policy (with file upload option)
+7. Optional prompt settings (the skill explains each prompt and asks ON/OFF/REQUIRED)
+8. Transfer of care standards and receiving facility list
+9. Service area context
+10. Privacy and data handling policy
+
+---
+
 ## Agency Configuration
-
-This skill is generic. Before first use, the deploying provider or agency should supply
-one or more of the following in their project instructions or as an uploaded file:
-
-- **PCR platform**: The software used (ESO, ImageTrend, Zoll RescueNet, EPCR,
-  FirstWatch, etc.). Identifies which data lives in structured fields vs. what needs
-  narrative capture.
-- **Documentation standard**: Agency or medical director documentation policy. Upload
-  as a reference file or paste key requirements. See
-  `references/documentation-standards-primer.md` for universal standards that apply
-  when no agency-specific policy is provided.
-- **Protocol reference**: State or medical director protocols. Used to name protocols
-  in the Assessment section.
-- **Controlled substance policy**: Any agency-specific chain-of-custody requirements
-  beyond the universal standard documented in this skill.
-
-If none of these are provided, the skill applies universal paramedicine documentation
-standards. Ask the provider once at the start of a session if agency context would help.
-Do not ask repeatedly.
 
 ---
 
