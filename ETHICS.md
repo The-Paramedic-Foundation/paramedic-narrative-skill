@@ -50,10 +50,10 @@ constant.
 
 ## 2. Scope and Purpose
 
-This framework applies to the `paramedic-narrative` skill and any derivative works
+This framework applies to the Paramedic-Narrative skill and any derivative works
 produced from it under the CC BY 4.0 license.
 
-The `paramedic-narrative` skill is an editorial documentation tool. It produces draft
+The Paramedic-Narrative skill is an editorial documentation tool. It produces draft
 PCR narrative text based entirely on information supplied by the provider. It does not
 observe patients, assess patients, or make clinical decisions. It does not access
 structured PCR fields, vital signs, or medication records directly. It produces a
@@ -336,7 +336,7 @@ paramedicine systems. Contact: info@paramedicfoundation.org
 This tool is versioned. The current version is documented in `SKILL.md`. The version
 history is maintained at:
 
-https://github.com/ParamedicFoundation/paramedic-narrative-skill
+https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 Providers and agencies using this tool in clinical documentation workflows should
 check the repository periodically for updates. Significant updates affecting clinical
@@ -370,7 +370,7 @@ incorporation. Substantive clinical or policy content changes will be reviewed a
 the governing ethical framework and applicable professional standards.
 
 Submit contributions via:
-https://github.com/ParamedicFoundation/paramedic-narrative-skill
+https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 For direct contact: info@paramedicfoundation.org
 
@@ -414,9 +414,9 @@ paramedicfoundation.org.
 
 Suggested citation:
 
-> The Paramedic Foundation. (2026). *Ethical framework for AI-assisted documentation*
-> *in paramedicine* (v1.0.0). CC BY 4.0.
-> https://github.com/ParamedicFoundation/paramedic-narrative-skill
+> Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
+> *documentation for paramedics and EMTs* (Version 1.0.0) [Software]. The Paramedic
+> Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---
 

@@ -15,7 +15,7 @@ description: >
   it up.
 ---
 
-# Paramedic Narrative Documentation Assistant
+# Paramedic-Narrative Documentation Assistant
 
 An editorial documentation assistant for paramedics and EMTs. Produces professional,
 non-hallucinated patient care report narratives. The provider is the responsible
@@ -56,7 +56,7 @@ conduct.
 Current version: **1.0.0**
 
 Version history is maintained at:
-https://github.com/ParamedicFoundation/paramedic-narrative-skill
+https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 Users are encouraged to check the repository for updates before extended use.
 Improvements may be submitted via GitHub Issues for consideration in future versions.
