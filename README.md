@@ -86,6 +86,10 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 ├── system-prompt.md                ← the tool instructions for ChatGPT, Gemini,
 │                                     or any other AI platform
 ├── paramedic-narrative.skill       ← the install file for Claude specifically
+├── agency-config-template.md       ← standardized configuration template for
+│                                     agencies and medical directors to complete
+├── provider-profile-template.md    ← personal provider profile template --
+│                                     one per provider, never shared
 └── paramedic-narrative/            ← folder containing the source files
     ├── SKILL.md                    ← full clinical instructions (human-readable)
     └── references/
@@ -93,11 +97,15 @@ paramedic-narrative-skill/          ← the repository (this whole page)
                                                   standards reference
 ```
 
-**You only need one of these depending on your platform:**
-- Using **Claude**: download `paramedic-narrative.skill`
-- Using **ChatGPT, Gemini, or anything else**: open `system-prompt.md` and copy its contents
-- Want to read the full clinical standards: open `paramedic-narrative/SKILL.md`
-- Want the ethical framework: open `ETHICS.md`
+**You only need one or two of these depending on who you are:**
+- **Line provider using Claude**: download `paramedic-narrative.skill`
+- **Line provider using ChatGPT or Gemini**: open `system-prompt.md` and copy its contents
+- **New provider setting up their profile**: open `provider-profile-template.md`
+  (or say "build my provider profile" to the skill and it will guide you)
+- **Agency administrator or medical director**: open `agency-config-template.md`
+  (or say "set up agency configuration" to the skill and it will guide you)
+- **Read the full clinical standards**: open `paramedic-narrative/SKILL.md`
+- **Read the ethical framework**: open `ETHICS.md`
 
 ---
 
@@ -255,42 +263,138 @@ appropriate field for your platform.
 
 ## Configuration
 
+### For individual providers
+
 This skill works out of the box using universal paramedicine documentation standards.
-For best results, supply your agency-specific context.
+If your agency has completed an agency configuration file (see below), download it
+from wherever your agency hosts it and upload it to your Claude Project alongside
+the skill. For ChatGPT or Gemini, paste its contents below the system prompt.
 
-### Option 1: Upload a configuration file (recommended for Claude Projects)
+If your agency has not yet created a configuration file, you can provide basic
+context at the start of any session:
 
-Create a file called `agency-config.md` and upload it to your Claude Project alongside
-the skill. Include any relevant fields:
+> "I work for [Agency] in [State]. We use [PCR platform]. Our protocols are
+> [protocol system name]. My medical director is [name]."
 
-```markdown
-## Agency Configuration
+The skill will apply that context for the session.
 
-PCR Platform: [e.g., ESO, ImageTrend, Zoll RescueNet, EPCR, FirstWatch]
+### For agencies and medical directors
 
-Documentation Standard: [paste your agency's narrative requirements or key points]
+The repository includes a standardized **agency configuration template** that medical
+directors and agency administrators can complete once and distribute to all providers.
+When every provider uses the same configuration file, every narrative produced in
+your system reflects your protocols, your ePCR platform, your documentation standard,
+and your medical director's clinical expectations automatically.
 
-Protocol Reference: [state/medical director protocol name or number format used]
+**The template file is:** `agency-config-template.md`
 
-Controlled Substance Policy: [agency-specific requirements, if any, beyond the
-skill default]
+It covers:
+- Agency identity and service area context
+- Medical director endorsement and scope of authorization
+- ePCR platform and narrative field specifications
+- Documentation standard and minimum narrative requirements
+- Protocol system name, version, and CPG sources adopted by medical director
+- Specific protocol titles for common call types
+- Controlled substance policy including witness, waste, and reconciliation requirements
+- Optional prompt settings -- turn specific skill prompts on, off, or required
+- Transfer of care standards and receiving facility list
+- Alternate destination authorization
+- Privacy and data handling policy
+- Version history for configuration updates
 
-Medical Director: [name, if you want it referenced in transfer-of-care narrative]
+**How to set it up:**
 
-Service Area: [rural/urban/suburban, if relevant to transport rationale documentation]
-```
+1. Download `agency-config-template.md` from this repository
+2. Open it in any text editor (Notepad, TextEdit, Word set to plain text)
+3. Fill in each section -- incomplete sections are fine, the skill applies
+   universal standards for anything left blank
+4. Have your medical director review and complete Section 2 (endorsement)
+5. Save the completed file as `agency-config.md`
+6. Post it somewhere all your providers can download it -- your agency intranet,
+   shared drive, ePCR document library, or a protected page on your website
+7. Tell providers to download it and upload it to their Claude Project, or paste
+   its contents below the system prompt in ChatGPT or Gemini
+8. When your protocols or policies change, update the file, increment the version
+   number in Section 11, and notify providers to download the new version
 
-### Option 2: Provide context at the start of a session
+**Contact The Paramedic Foundation** if you need assistance configuring the skill
+for your agency or would like consultation on AI documentation governance:
+info@paramedicfoundation.org
 
-At the beginning of any session, state: "I work for [Agency] in [State]. We use
-[PCR platform]. Our documentation standard requires [key requirements]." The skill
-applies that context for the session.
+---
 
-### Option 3: Use the defaults
+## Setting Up Your Provider Profile
 
-If no agency configuration is provided, the skill applies universal paramedicine
-documentation standards as documented in
-`paramedic-narrative/references/documentation-standards-primer.md`.
+Your provider profile is a personal file that tells the skill who you are, which
+agencies you work for, which roles you operate in, and any standing documentation
+preferences. You create it once and it is active for every session without having
+to re-enter your information.
+
+**To build it:** say "I want to set up my provider profile" and the skill will
+guide you through a short conversation and produce the file automatically.
+
+Alternatively, download `provider-profile-template.md` from this repository,
+fill it in, and save it as `provider-profile.md`.
+
+**To use it:** upload `provider-profile.md` to your Claude Project alongside the
+skill. For ChatGPT or Gemini, paste its contents below the system prompt.
+
+---
+
+## Working for Multiple Agencies
+
+If you work for more than one agency, upload all your agency configuration files
+to your Claude Project at once. The skill detects all loaded configurations and
+knows which agencies are available to you.
+
+**At the start of a session**, say which agency you are working for:
+> "I'm working an emergency shift for [Agency Name] today."
+
+**To switch agencies mid-session:**
+> "Switch to [agency short name]" or "I'm working for [Agency B] today."
+
+The skill confirms the switch, preserves your provider profile and preferences
+completely, and applies the new agency's protocols and documentation standards.
+
+---
+
+## Role Contexts
+
+If you work in more than one clinical role, tell the skill which role is active
+at the start of each session. This changes which documentation framework,
+prompts, and disposition options apply.
+
+**Available roles:**
+
+- **Emergency paramedic** -- 911 response. Full SOAP with all scoring tools,
+  forensic standard, IMIST-AMBO handoff, ATLS trauma standard. Care pathway
+  documentation for low-acuity calls and refusals.
+
+- **Rescue paramedic** -- Technical or special operations. Adds scene safety
+  and hazard documentation, rescue mechanism, extrication detail, specialized
+  equipment, and multi-agency role attribution.
+
+- **Community paramedic** -- CP/MIH visits. Shifts to longitudinal care
+  framework: visit reason, functional status, medication adherence, resource
+  connections, care plan. Alternative disposition is the primary outcome.
+  Barriers to care always active.
+
+- **Hospital paramedic** -- CCT, interfacility transport, in-hospital response,
+  or procedure support. Emphasizes transport indication and medical necessity,
+  pre-transport stability, monitoring and interventions en route, and structured
+  handoff to receiving team.
+
+**To activate a role:**
+> "I'm doing community paramedicine today."
+> "This is a CCT run."
+> "I'm on rescue."
+> "Emergency shift."
+
+**To switch roles mid-session:**
+> "Switch to emergency mode for this call."
+
+The skill applies the emergency framework for that narrative and returns to
+your prior role context when complete.
 
 ---
 
