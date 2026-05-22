@@ -289,7 +289,7 @@ If you use or adapt this skill in research, policy work, or publications:
 
 > The Paramedic Foundation. (2026). *paramedic-narrative-skill: AI-assisted PCR*
 > *narrative documentation for paramedics and EMTs* (v1.0.0). CC BY 4.0.
-> https://github.com/ParamedicFoundation/paramedic-narrative-skill
+> https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill 
 
 ---
 
