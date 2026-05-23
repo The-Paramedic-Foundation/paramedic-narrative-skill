@@ -105,6 +105,15 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 │                                     agencies and medical directors to complete
 ├── provider-profile-template.md    ← personal provider profile template --
 │                                     one per provider, never shared
+├── assets/                         ← brand and design assets
+│   ├── pn-header.png               ← horizontal header lockup (PNG, used in README)
+│   ├── pn-header.svg               ← horizontal header lockup (SVG source)
+│   ├── pn-badge.png                ← square badge mark (PNG)
+│   ├── pn-badge.svg                ← square badge mark (SVG source)
+│   ├── pn-ecg.png                  ← ECG stylistic element (PNG)
+│   ├── pn-ecg.svg                  ← ECG stylistic element (SVG source)
+│   ├── pn-social-preview.png       ← GitHub social preview card (1280x640)
+│   └── pn-social-preview.svg       ← social preview card (SVG source)
 └── paramedic-narrative/            ← folder containing the source files
     ├── SKILL.md                    ← full clinical reference standard -- upload
     │                                 this as a Knowledge File in ChatGPT
