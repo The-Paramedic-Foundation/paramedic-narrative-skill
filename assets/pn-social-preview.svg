@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+
+  <rect width="1280" height="640" fill="#0A1E2E"/>
+
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1B5E7B" stroke-width="0.4" opacity="0.3"/>
+  </pattern>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+
+  <!-- ECG background accent -->
+  <line x1="0" y1="320" x2="260" y2="320" stroke="#6AAAC8" stroke-width="2.5" stroke-linecap="round" opacity="0.14"/>
+  <polyline points="260,320 272,308 284,320" fill="none" stroke="#6AAAC8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
+  <polyline points="284,320 292,332 298,272 304,352 312,320" fill="none" stroke="#6AAAC8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
+  <polyline points="312,320 328,320 334,334 340,278 346,356 354,320" fill="none" stroke="#6AAAC8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
+  <polyline points="354,320 370,320 376,310 384,330 392,320" fill="none" stroke="#6AAAC8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
+  <line x1="392" y1="320" x2="1280" y2="320" stroke="#6AAAC8" stroke-width="2.5" stroke-linecap="round" opacity="0.14"/>
+
+  <!-- White card -->
+  <rect x="80" y="110" width="1120" height="420" rx="16" fill="white" opacity="0.97"/>
+
+  <!-- Document mark -->
+  <g transform="translate(118,146) scale(0.68)">
+    <path d="M60 40 L60 358 L280 358 L280 124 L218 40 Z"
+          fill="white" stroke="#0E2D42" stroke-width="9" stroke-linejoin="round"/>
+    <path d="M218 40 L218 124 L280 124"
+          fill="none" stroke="#0E2D42" stroke-width="9" stroke-linejoin="round"/>
+    <line x1="92"  y1="228" x2="248" y2="228" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+    <line x1="92"  y1="256" x2="248" y2="256" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+    <line x1="92"  y1="284" x2="248" y2="284" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+    <line x1="92"  y1="312" x2="200" y2="312" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+    <line x1="20"  y1="196" x2="86"  y2="196" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round"/>
+    <polyline points="86,196 96,184 106,196" fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="106,196 114,208 120,136 126,228 134,196" fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="134,196 148,196 154,212 160,148 166,232 174,196" fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="174,196 192,196 198,182 206,210 214,196" fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="214" y1="196" x2="298" y2="196" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round"/>
+    <line x1="294" y1="200" x2="314" y2="178" stroke="#C96442" stroke-width="6.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark: textLength constrains to exact pixel budget, gentle expansion only -->
+  <text x="390" y="308"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="56" font-weight="900"
+        textLength="760" lengthAdjust="spacingAndGlyphs">
+    <tspan fill="#0E2D42">PARAMEDIC-</tspan><tspan fill="#1B7EA6">NARRATIVE</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="392" y="370"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="26" font-weight="400"
+        fill="#6B8CA0">by The Paramedic Foundation.</text>
+
+  <!-- Version strip -->
+  <text x="640" y="578"
+        font-family="Arial, sans-serif"
+        font-size="16" fill="#6AAAC8"
+        text-anchor="middle" letter-spacing="1.5">
+    v1.2.0 · Free · Open source · CC BY 4.0 · paramedicfoundation.org
+  </text>
+
+</svg>

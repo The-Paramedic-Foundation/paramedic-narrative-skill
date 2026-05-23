@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Paramedic-Narrative Badge Mark v1.1 | The Paramedic Foundation | CC BY 4.0 -->
+<!-- ECG waveform geometry: flat entry, P wave, QRS complex, flat exit, pen-stroke terminal -->
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paramedic-Narrative badge mark">
+
+  <!-- Document body: left, bottom, right -->
+  <path d="M44 28 L44 178 L156 178 L156 64 L124 28 Z"
+        fill="white" stroke="#0E2D42" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Folded corner -->
+  <path d="M124 28 L124 64 L156 64"
+        fill="none" stroke="#0E2D42" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- Text lines — lower third of document -->
+  <line x1="62" y1="122" x2="138" y2="122" stroke="#0E2D42" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="62" y1="136" x2="138" y2="136" stroke="#0E2D42" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="62" y1="150" x2="138" y2="150" stroke="#0E2D42" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="62" y1="164" x2="118" y2="164" stroke="#0E2D42" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- ECG WAVEFORM running through document midpoint at y=96 -->
+  <!-- Flat entry from left (outside document) -->
+  <line x1="28" y1="96" x2="68" y2="96" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round"/>
+  <!-- P wave: small upward bump -->
+  <polyline points="68,96 73,92 78,96"
+            fill="none" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- QRS complex: down, sharp tall spike up, sharp down below baseline, recovery -->
+  <polyline points="78,96 82,100 85,68 88,112 92,96"
+            fill="none" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Second smaller complex: gentle up-down -->
+  <polyline points="92,96 98,96 102,88 106,100 110,96"
+            fill="none" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Flat exit baseline to right edge and beyond -->
+  <line x1="110" y1="96" x2="166" y2="96" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round"/>
+  <!-- Pen-stroke terminal: short diagonal coral tick at far right, angled upward-right -->
+  <line x1="162" y1="98" x2="172" y2="88" stroke="#C96442" stroke-width="3.5" stroke-linecap="round"/>
+
+</svg>

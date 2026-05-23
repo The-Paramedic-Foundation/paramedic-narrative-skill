@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Paramedic-Narrative ECG Stylistic Element v1.1 | The Paramedic Foundation | CC BY 4.0 -->
+<!-- Faithful recreation of PN_ecg.png geometry: waveform left, long flat right, pen-stroke terminal -->
+<svg width="900" height="160" viewBox="0 0 900 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paramedic-Narrative ECG element">
+
+  <!-- Flat entry baseline -->
+  <line x1="0" y1="80" x2="140" y2="80" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- P wave: small upward notch -->
+  <polyline points="140,80 148,74 156,80"
+            fill="none" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- First QRS: down-spike-down-recovery -->
+  <polyline points="156,80 162,86 166,44 170,106 176,80"
+            fill="none" stroke="#1B7EA6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Second complex: narrower, slightly shorter -->
+  <polyline points="176,80 186,80 190,88 194,52 198,108 204,80"
+            fill="none" stroke="#1B7EA6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Third smaller complex: up-down-up -->
+  <polyline points="204,80 216,80 220,72 226,88 232,80"
+            fill="none" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Long flat baseline — the written line, majority of width -->
+  <line x1="232" y1="80" x2="848" y2="80" stroke="#1B7EA6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Pen-stroke terminal: short diagonal coral tick, angled upward-right like pen lifting off page -->
+  <line x1="844" y1="84" x2="864" y2="66" stroke="#C96442" stroke-width="4" stroke-linecap="round"/>
+
+</svg>

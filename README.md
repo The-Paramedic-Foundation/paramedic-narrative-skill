@@ -1,4 +1,17 @@
-# Paramedic-Narrative Skill
+<div align="center">
+
+![Paramedic-Narrative by The Paramedic Foundation](https://raw.githubusercontent.com/The-Paramedic-Foundation/paramedic-narrative-skill/main/assets/pn-header.png)
+
+</div>
+
+<div align="center">
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
+[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](../../releases/latest)
+[![Platform](https://img.shields.io/badge/Platform-Claude%20%7C%20ChatGPT%20%7C%20Gemini-teal.svg)](../../releases/latest)
+[![Free](https://img.shields.io/badge/Cost-Free-green.svg)](../../releases/latest)
+
+</div>
 
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 

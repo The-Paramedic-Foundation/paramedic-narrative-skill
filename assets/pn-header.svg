@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Paramedic-Narrative Header Lockup v1.3 | The Paramedic Foundation | CC BY 4.0 -->
+<svg width="1700" height="400" viewBox="0 0 1700 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paramedic-Narrative by The Paramedic Foundation">
+
+  <!-- ── DOCUMENT MARK ──────────────────────────────────── -->
+  <path d="M60 40 L60 358 L280 358 L280 124 L218 40 Z"
+        fill="white" stroke="#0E2D42" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M218 40 L218 124 L280 124"
+        fill="none" stroke="#0E2D42" stroke-width="9" stroke-linejoin="round"/>
+  <line x1="92"  y1="228" x2="248" y2="228" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+  <line x1="92"  y1="256" x2="248" y2="256" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+  <line x1="92"  y1="284" x2="248" y2="284" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+  <line x1="92"  y1="312" x2="200" y2="312" stroke="#0E2D42" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- ECG waveform at y=196 -->
+  <line x1="20" y1="196" x2="86" y2="196" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round"/>
+  <polyline points="86,196 96,184 106,196"
+            fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="106,196 114,208 120,136 126,228 134,196"
+            fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="134,196 148,196 154,212 160,148 166,232 174,196"
+            fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="174,196 192,196 198,182 206,210 214,196"
+            fill="none" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="214" y1="196" x2="298" y2="196" stroke="#1B7EA6" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- Pen-stroke terminal only — no red dot -->
+  <line x1="294" y1="200" x2="314" y2="178" stroke="#C96442" stroke-width="6.5" stroke-linecap="round"/>
+
+  <!-- ── WORDMARK ─────────────────────────────────────────── -->
+  <!-- Single text element with tspan color switch — browser handles advance width correctly -->
+  <text x="360" y="222"
+        font-family="'Arial Black','Arial',sans-serif"
+        font-size="96" font-weight="900">
+    <tspan fill="#0E2D42">PARAMEDIC-</tspan><tspan fill="#1B7EA6">NARRATIVE</tspan>
+  </text>
+
+  <!-- Subtitle — naturally sized, grey, left-aligned -->
+  <text x="362" y="294"
+        font-family="'Arial','Helvetica',sans-serif"
+        font-size="40" font-weight="400"
+        fill="#6B8CA0">by The Paramedic Foundation.</text>
+
+</svg>
