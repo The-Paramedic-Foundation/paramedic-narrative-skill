@@ -3,7 +3,7 @@
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 
 Published by [The Paramedic Foundation](https://paramedicfoundation.org)
-Licensed under [CC BY 4.0](LICENSE.md) · Version 1.1.0
+Licensed under [CC BY 4.0](LICENSE.md) · Version 1.2.0
 
 ---
 
@@ -104,6 +104,8 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 - **Line provider using Claude**: download `paramedic-narrative.skill`
 - **Line provider using ChatGPT**: see the ChatGPT two-file setup below
 - **Line provider using Gemini or another platform**: open `system-prompt.md` and copy its contents
+- **Line provider using Microsoft Copilot**: see the Copilot section below
+- **Setting up on a phone**: see the Mobile section below
 - **New provider setting up their profile**: open `provider-profile-template.md`
   (or say "build my provider profile" to the skill and it will guide you)
 - **Agency administrator or medical director**: open `agency-config-template.md`
@@ -279,6 +281,84 @@ conversation without it counting against the Instructions character limit.
 3. Paste the contents into the instructions field
 4. Optionally paste your agency documentation standard below
 5. Save the Gem
+
+### Microsoft Copilot (M365)
+
+Microsoft 365 Copilot supports partial setup through Custom Instructions. The
+clinical reference standard must be pasted at the start of each session.
+
+**One-time setup (Custom Instructions):**
+1. Open `chatgpt-instructions.md` in this repository and copy its full contents
+2. In Copilot, click the three-dot menu (top right) > **Settings** >
+   **Personalization** > **Edit instructions**
+3. Paste the contents and click **Save instructions**
+
+**Per-session (clinical reference):**
+4. Go to `paramedic-narrative/SKILL.md` in this repository, click **Raw**,
+   select all (Ctrl+A / Cmd+A), and copy
+5. At the start of each Copilot conversation, paste the text with the note:
+   "This is your clinical reference standard for this session."
+6. Then describe your call
+
+The behavioral rules persist via Custom Instructions. The clinical reference
+content must be pasted each session because M365 Copilot does not have a
+persistent Knowledge File upload feature equivalent to ChatGPT Custom GPTs.
+
+**Note:** Some organizations restrict Copilot customization through IT policy.
+If the Custom Instructions field is unavailable, paste both `chatgpt-instructions.md`
+and `SKILL.md` at the start of each session.
+
+### Mobile (iOS and Android)
+
+Paramedic-Narrative works fully on a smartphone. Claude, ChatGPT, and Gemini
+all have free mobile apps and also work in any phone browser without an app.
+
+**Getting files from GitHub on your phone:**
+
+The GitHub mobile app does not support raw file downloads. Use your phone's
+browser (Safari on iOS, Chrome on Android) instead:
+
+1. Go to `github.com/The-Paramedic-Foundation/paramedic-narrative-skill`
+   in your phone browser
+2. Navigate to the file you need
+3. Tap the file name to open it
+4. Tap **Raw** (top right of the file view) -- this opens the plain text
+5. Tap and hold anywhere in the text > **Select All** > **Copy**
+   (or use your browser's share sheet to save to Files/Downloads)
+
+**Claude on mobile:**
+1. In your phone browser, go to the Releases page and tap the `.skill` file
+   link -- your browser will offer to download or open it
+2. Save it to your Files app (iOS) or Downloads (Android)
+3. Open the Claude app, go to your Project, tap **Settings** > **Skills** >
+   **Upload Skill**, and select the file from Files/Downloads
+4. To upload your agency config: same process, upload as a Project file
+
+**ChatGPT on mobile:**
+1. In your phone browser, open `chatgpt-instructions.md`, tap Raw, select all,
+   copy
+2. Open the ChatGPT app > **Explore GPTs** > find your GPT > tap edit (pencil)
+   > **Configure** > paste into **Instructions**
+3. For the Knowledge File: open `paramedic-narrative/SKILL.md` in your browser,
+   tap Raw, use the share sheet to save to Files/Downloads
+4. In the ChatGPT GPT editor > **Knowledge** > **Upload files** > select SKILL.md
+
+**Gemini on mobile:**
+1. In your phone browser, open `system-prompt.md`, tap Raw, select all, copy
+2. Open the Gemini app > **Gems** > **New Gem** > paste into the instructions field
+3. Save the Gem
+
+**Copilot on mobile:**
+1. In the Copilot app, tap your profile > **Settings** > **Personalization** >
+   **Edit instructions** > paste contents of `chatgpt-instructions.md` > Save
+2. At the start of each session: open `SKILL.md` in your phone browser, tap Raw,
+   select all, copy, paste as your first message in Copilot
+
+**Using the tool on shift:**
+- Tap the microphone and describe the call out loud -- no typing required
+- Use the camera to photograph clinical data (vital sign printouts, 12-lead
+  strips, medication lists) -- confirm no PHI visible before photographing
+- Copy the approved narrative and paste into your ePCR mobile app
 
 ### Any Other LLM Platform
 
@@ -502,8 +582,9 @@ or fatality, and any scene where law enforcement is investigating.
 | File | Purpose | Platform |
 |---|---|---|
 | `paramedic-narrative.skill` | Native skill package | Claude |
-| `system-prompt.md` | Plain system prompt | ChatGPT, Gemini, any LLM |
-| `paramedic-narrative/SKILL.md` | Source instructions | All (human-readable) |
+| `chatgpt-instructions.md` | Condensed instructions (fits character limit) | ChatGPT, Copilot |
+| `system-prompt.md` | Full system prompt | Gemini, direct API, any LLM |
+| `paramedic-narrative/SKILL.md` | Full clinical reference standard | ChatGPT Knowledge File, Copilot per-session paste, all (human-readable) |
 | `paramedic-narrative/references/documentation-standards-primer.md` | Standards reference | Loaded on demand |
 
 All versions contain identical clinical logic. Only the packaging differs.
@@ -531,7 +612,7 @@ Care.* The Paramedic Foundation / American College of Paramedics.
 
 ## Version Control
 
-Current version: **1.1.0**
+Current version: **1.2.0**
 
 Version history and release notes are maintained in this repository. Check
 [Releases](../../releases) for updates. Providers and agencies using this tool in
@@ -567,7 +648,7 @@ All contributions are reviewed by The Paramedic Foundation before incorporation.
 If you use or adapt this skill in research, policy work, or publications:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 1.1.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 1.2.0) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---

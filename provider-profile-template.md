@@ -1,7 +1,7 @@
 # Paramedic-Narrative Skill — Provider Profile Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 1.1.0
+paramedicfoundation.org · Version 1.2.0
 
 ---
 

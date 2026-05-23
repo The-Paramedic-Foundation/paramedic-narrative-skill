@@ -53,7 +53,7 @@ conduct.
 
 ## Version
 
-Current version: **1.0.0**
+Current version: **1.2.0**
 
 Version history is maintained at:
 https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
