@@ -373,7 +373,7 @@ docs/.
    scene observations that shaped decisions.
 3. PATIENT: age, sex, weight if estimated, baseline status if known.
 4. STORY: chief complaint in patient's words, onset, duration, mechanism,
-   better/worse, before EMS arrived, who gave history and reliability.
+   better/worse, before the crew arrived, who gave history and reliability.
 5. PERTINENT NEGATIVES: what the patient specifically denied.
 6. EXAM HIGHLIGHTS: only findings that drove decisions or are not in structured
    fields.

@@ -125,8 +125,10 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 │   ├── pn-social-preview.png       ← GitHub social preview card (1280x640)
 │   └── pn-social-preview.svg       ← social preview card (SVG source)
 ├── docs/                           ← provider-facing documents
-│   ├── dictation-pocket-card.txt   ← 12-point dictation skeleton (text)
-│   ├── dictation-pocket-card.pdf   ← printable one-page pocket card
+│   ├── TPF_ParamedicNarrative_DictationPocketCard_2026_v1.txt
+│   │                               ← 12-point dictation skeleton (text)
+│   ├── TPF_ParamedicNarrative_DictationPocketCard_2026_v1.pdf
+│   │                               ← printable one-page pocket card
 │   └── spec-addendum-sections-4-4A-4B-4C.md  ← v1.3.0 design addendum
 └── paramedic-narrative/            ← folder containing the source files
     ├── SKILL.md                    ← full clinical reference standard -- upload

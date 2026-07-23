@@ -1,6 +1,6 @@
-EMS DICTATION POCKET CARD
+PARAMEDIC DICTATION POCKET CARD
 Talk through these 12 in any order. Fragments are fine.
-Skip what's on the monitor upload or in structured fields.
+Skip what is in structured fields.
 
 1. CALL FRAME
    Unit / dispatch complaint / response mode
@@ -19,7 +19,7 @@ Skip what's on the monitor upload or in structured fields.
 4. STORY
    Chief complaint in their words
    Onset / duration / mechanism
-   Better-worse / before EMS arrived
+   Better-worse / before your arrival
    Who gave history + reliability
 
 5. PERTINENT NEGATIVES
@@ -27,7 +27,7 @@ Skip what's on the monitor upload or in structured fields.
 
 6. EXAM HIGHLIGHTS
    Only findings that drove decisions
-   or aren't in the Assessment tab
+   or are not in structured fields
 
 7. NUMBERS
    Vitals not on upload / trends
@@ -60,8 +60,10 @@ Skip what's on the monitor upload or in structured fields.
 --------------------------------------------------
 PHOTO SHORTCUTS: monitor screen, med vials, facility
 paperwork, glove notes. Snap it, send it, confirm the
-transcription. HIPAA: no identifiable info in photos --
-redact names, DOBs, MRNs, and faces before uploading.
+transcription.
+
+HIPAA: no identifiable information in photos. Redact
+names, DOBs, MRNs, and faces before uploading.
 
 HOURS LATER? Just say so. You'll get targeted recall
 questions instead of a blank interview.
@@ -69,3 +71,11 @@ questions instead of a blank interview.
 RULES: If you can't recall it, say so. Gaps get marked
 [VERIFY], never filled in. You review and own every
 word before submission.
+
+--------------------------------------------------
+The Paramedic Foundation
+23 W Central Entrance, PMB 321, Duluth, MN 55811
+www.paramedicfoundation.org | info@paramedicfoundation.org
+Part of Paramedic-Narrative. Published by The Paramedic
+Foundation under CC BY 4.0. (c) 2026 The Paramedic Foundation
+Version 1 | July 23, 2026

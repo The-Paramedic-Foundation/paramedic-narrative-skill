@@ -544,7 +544,8 @@ A dictation skeleton for providers describing a call by voice. It is a prompt
 order, not a rigid script -- accept it in any order and in fragments. A provider
 who talks through this list once produces enough raw material for a complete
 narrative in any target format. A printable pocket card version is maintained in
-the repository at `docs/dictation-pocket-card.txt` and `docs/dictation-pocket-card.pdf`.
+the repository at `docs/TPF_ParamedicNarrative_DictationPocketCard_2026_v1.txt`
+and `docs/TPF_ParamedicNarrative_DictationPocketCard_2026_v1.pdf`.
 
 1. **CALL FRAME**: unit, dispatch complaint, response mode, scene type, other
    agencies on scene and their role, any delays and why.
@@ -552,8 +553,8 @@ the repository at `docs/dictation-pocket-card.txt` and `docs/dictation-pocket-ca
    who was present, scene observations that shaped decisions.
 3. **PATIENT**: age, sex, weight if estimated, baseline status if known.
 4. **STORY**: chief complaint in patient's words, onset, duration, mechanism,
-   what makes it better or worse, what happened before EMS arrived, who gave the
-   history and how reliable.
+   what makes it better or worse, what happened before the crew arrived, who gave
+   the history and how reliable.
 5. **PERTINENT NEGATIVES**: what the patient specifically denied.
 6. **EXAM HIGHLIGHTS**: only findings that drove decisions or are not going in
    structured fields.
