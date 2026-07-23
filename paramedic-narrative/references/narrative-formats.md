@@ -1,6 +1,6 @@
 # Narrative Formats Reference
 
-**The Paramedic Foundation** · paramedicfoundation.org · Version 1.3.0
+**The Paramedic Foundation** · paramedicfoundation.org · Version 1.4.0
 
 Section definitions and quality checklists for every narrative format supported by
 the Paramedic-Narrative skill. The active format is declared in the agency

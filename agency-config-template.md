@@ -1,7 +1,7 @@
 # Paramedic-Narrative Skill — Agency Configuration Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 1.3.0
+paramedicfoundation.org · Version 1.4.0
 
 ---
 
@@ -309,6 +309,15 @@ not addressed).
 **Scoring tools prompt (HEART, Cincinnati, CIWA-Ar, etc.):**
 [ON / OFF / REQUIRED]
 
+**Retrospective IMIST-AMBO handoff example (training stimulus appended after
+each completed draft):**
+[ON / OFF -- default ON. Providers may skip it per call either way.]
+
+**Live handoff prep command (on-request IMIST-AMBO assembly during transport):**
+[ON / OFF -- default ON. Assembles only facts the provider has already
+provided; it never suggests assessment, treatment, or destination. Set OFF if
+your agency prohibits AI tool interaction during patient care.]
+
 **Notes on prompt settings:**
 [Any additional context for providers about why specific prompts are set the way
 they are -- e.g., "Barriers to care is REQUIRED because our QI program tracks
@@ -423,5 +432,5 @@ by authorized providers under the medical direction of [Medical Director Name].*
 *paramedicfoundation.org · info@paramedicfoundation.org*
 
 *Cite as: Nudell, N. G. (2026). Paramedic-Narrative skill — agency configuration*
-*template (Version 1.3.0) [Software configuration template]. The Paramedic*
+*template (Version 1.4.0) [Software configuration template]. The Paramedic*
 *Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill*

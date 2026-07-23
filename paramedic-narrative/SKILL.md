@@ -6,7 +6,9 @@ description: >
   DCHART-E, and others) that capture clinical reasoning, scene context, differential
   rationale, medication indication and response, controlled substance audit trails,
   and forensic evidentiary detail -- without duplicating structured PCR fields.
-  Accepts photo plus dictation intake and fragmented input across sessions.
+  Accepts photo plus dictation intake and fragmented input across sessions,
+  including during transport, with an on-request IMIST-AMBO handoff prep and a
+  retrospective handoff training example appended to completed drafts.
   This is an editorial tool only. It does not make clinical decisions and must never be
   used for that purpose. Use this skill whenever a provider asks to document a call,
   write a narrative, draft a patient care report, or document any paramedicine patient
@@ -55,7 +57,7 @@ conduct.
 
 ## Version
 
-Current version: **1.3.0**
+Current version: **1.4.0**
 
 Version history is maintained at:
 https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
@@ -499,7 +501,9 @@ need narrative input:
 
 ### Step 4: Draft
 Produce the narrative in the active narrative format (see Narrative Formats below).
-Mark gaps [VERIFY]. End with the provider review disclaimer.
+Mark gaps [VERIFY]. End with the provider review disclaimer, followed by the
+retrospective IMIST-AMBO handoff example unless disabled (see Retrospective
+Handoff Example below).
 
 ---
 
@@ -605,6 +609,86 @@ e. **Honest gaps**: if the provider genuinely cannot recall a detail, the
 f. **Timestamp honesty**: if documentation occurs significantly after the call
    and the agency requires it, support a late-entry notation per the agency
    configuration.
+
+---
+
+## Concurrent Intake and Handoff Prep
+
+Fragment accumulation is not limited to after the call. A provider may feed
+fragments during transport -- dictation between interventions, a monitor photo,
+a medication given. The running worksheet builds the same way.
+
+**Handoff prep command.** At any point, the provider may say "handoff prep,"
+"give me the handoff," or "IMIST-AMBO now." Assemble a spoken-style IMIST-AMBO
+report from the facts collected so far:
+
+- **I -- Identification**: age, sex, and clinically relevant identifiers. No
+  patient name (PHI rule).
+- **M -- Mechanism / Medical complaint**: mechanism or presenting complaint as
+  provided.
+- **I -- Injuries / Information**: findings identified so far.
+- **S -- Signs**: most recent vitals and the trend, as provided.
+- **T -- Treatment and trends**: interventions given and response.
+- **A -- Allergies**: as provided.
+- **M -- Medications**: patient's own medications, as provided.
+- **B -- Background**: relevant history, as provided.
+- **O -- Other**: lines, devices, belongings, family present, anything the
+  receiving team needs.
+
+Format for speech: short declarative lines a provider can read or glance at in
+under a minute. Elements not yet collected are listed at the end as "not yet
+collected" -- one line, no padding. Never fill a missing element with a
+plausible value.
+
+**Hard guardrails for concurrent use:**
+
+1. **Patient care precedes documentation.** Never solicit input during a call.
+   Respond when the provider initiates; keep responses short.
+2. **Assembly only.** Handoff prep assembles facts the provider has already
+   collected and reported. It never suggests what to assess, what to treat,
+   where to transport, or what to hand over that was not provided. If asked a
+   clinical question during a call, decline per the Disclaimer and state that
+   the provider's protocols and medical direction govern.
+3. **Provider verification.** The provider verifies every element before
+   speaking it to a receiving clinician. The assembled report is a prompt
+   sheet, not an authority.
+4. **Continuity.** After the handoff, the same worksheet feeds the narrative.
+   Document the handoff actually given -- who received it, condition at
+   transfer, items transferred -- in the Plan section as usual.
+
+---
+
+## Retrospective Handoff Example (Training Stimulus)
+
+Because the chart is written after transfer of care, every completed draft can
+close with a model of what a structured handoff for this call would sound
+like. This is a rehearsal aid: providers who see a well-formed IMIST-AMBO
+built from their own call data internalize the structure for the next live
+handoff.
+
+**When it appears:** appended after the standing provider review disclaimer on
+every completed narrative draft, unless the agency configuration sets it OFF
+or the provider says "skip the handoff example." A provider may also request
+it alone: "show me the handoff example."
+
+**Construction rules:**
+
+1. Built only from information the provider supplied for this call. Elements
+   the provider did not supply appear as [VERIFY], exactly as in the
+   narrative. Never invent a value to make the example complete.
+2. Spoken-style, concise, in the IMIST-AMBO order above -- the length of a
+   real transfer-of-care report, not a second narrative.
+3. It models structure; it does not critique. Never characterize the handoff
+   the provider actually gave as deficient. This is a training stimulus, not
+   a performance review.
+4. For trauma patients, note when the ATLS 11th edition handoff standard adds
+   elements to the standard IMIST-AMBO sequence.
+
+**Required label.** The block always begins:
+
+> **RETROSPECTIVE HANDOFF EXAMPLE -- TRAINING USE ONLY.** This is a model of
+> a structured IMIST-AMBO handoff built from the information you provided. It
+> is not part of the PCR narrative. Do not paste it into the ePCR.
 
 ---
 
@@ -1309,6 +1393,8 @@ etiology was considered, not merely that obstetric history was collected.
 - Does not characterize legal status or conclude criminal activity
 - Does not fabricate any element of a controlled substance audit trail
 - Does not require confirmation steps before drafting
+- Does not direct assessment, treatment, or transport during a call; handoff
+  prep assembles only facts the provider has already collected
 
 The provider retains full professional and legal responsibility for all submitted
 documentation.
