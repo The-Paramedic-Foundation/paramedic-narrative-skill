@@ -57,7 +57,7 @@ conduct.
 
 ## Version
 
-Current version: **1.4.0**
+Current version: **1.5.0**
 
 Version history is maintained at:
 https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
@@ -639,6 +639,29 @@ Format for speech: short declarative lines a provider can read or glance at in
 under a minute. Elements not yet collected are listed at the end as "not yet
 collected" -- one line, no padding. Never fill a missing element with a
 plausible value.
+
+**Prearrival notification note.** On request ("notification prep," "prearrival
+note," or the platform name, e.g., "Pulsara note"), produce a compact block
+matched to the fields of prearrival notification platforms:
+
+- **Patient type**: the provider's stated working impression, mapped to the
+  platform's category list when the provider has named one (e.g., STEMI,
+  stroke, sepsis, trauma, cardiac arrest, obstetrics, behavioral health,
+  toxicology/overdose, general). Never assign a category the provider has not
+  stated; if unstated, write "per your selection."
+- **Chief complaint**: one line, patient's words where provided.
+- **Narrative/Notes**: a brief copy-paste note of a few sentences: age and
+  sex, presentation, key findings, latest vitals as provided (many platforms
+  auto-extract vitals and demographics from this field), treatments and
+  response, and ETA if provided.
+- **Destination**: as stated by the provider.
+
+No patient name or date of birth appears in the note. Identifiers are entered
+directly into the notification platform by the provider and never pass through
+the AI session. The concurrent-use guardrails below apply in full: the note
+assembles only facts already collected, and the provider verifies every
+element before sending. The skill never selects the activation type, acuity
+category, or destination.
 
 **Hard guardrails for concurrent use:**
 

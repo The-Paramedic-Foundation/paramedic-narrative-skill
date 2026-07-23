@@ -1,7 +1,7 @@
 # Paramedic-Narrative Skill — Agency Configuration Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 1.4.0
+paramedicfoundation.org · Version 1.5.0
 
 ---
 
@@ -318,6 +318,11 @@ each completed draft):**
 provided; it never suggests assessment, treatment, or destination. Set OFF if
 your agency prohibits AI tool interaction during patient care.]
 
+**Prearrival notification note (on-request copy-paste block for notification
+platforms):**
+[ON / OFF -- default ON. Same guardrails as handoff prep. Set OFF if your
+agency prohibits AI tool interaction during patient care.]
+
 **Notes on prompt settings:**
 [Any additional context for providers about why specific prompts are set the way
 they are -- e.g., "Barriers to care is REQUIRED because our QI program tracks
@@ -330,6 +335,13 @@ access issues for grant reporting."]
 **Preferred Handoff Framework:**
 [e.g., "IMIST-AMBO required for all ALS transfers" or "Verbal SBAR acceptable
 for BLS transfers, IMIST-AMBO required for ALS"]
+
+**Prearrival Notification Platform:**
+[The platform or method your agency uses to notify receiving facilities --
+e.g., "Pulsara," "radio report to ED charge nurse," "direct phone report."
+If the platform has structured fields (patient type, chief complaint,
+destination), note them so notification prep output matches. Include your
+activation types if standardized (e.g., STEMI, stroke, trauma, sepsis).]
 
 **Primary Receiving Facilities:**
 [List the hospitals and specialty centers your agency typically transports to,
@@ -432,5 +444,5 @@ by authorized providers under the medical direction of [Medical Director Name].*
 *paramedicfoundation.org · info@paramedicfoundation.org*
 
 *Cite as: Nudell, N. G. (2026). Paramedic-Narrative skill — agency configuration*
-*template (Version 1.4.0) [Software configuration template]. The Paramedic*
+*template (Version 1.5.0) [Software configuration template]. The Paramedic*
 *Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill*
