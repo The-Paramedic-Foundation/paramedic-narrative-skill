@@ -1,21 +1,21 @@
 # Paramedic-Narrative Skill — Agency Configuration Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 1.5.0
+paramedicfoundation.org · Version 2.0.0
 
 ---
 
-## Instructions for Agency Administrators and Medical Directors
+## Instructions for Agency Administrators and Chief Paramedics
 
 This file is the standardized configuration template for the Paramedic-Narrative
 documentation skill. When completed, it tells the skill exactly how your agency
 operates so that every narrative produced by a provider in your system reflects
 your protocols, your ePCR platform, your documentation standard, and your
-medical director's clinical expectations.
+Chief Paramedic's clinical expectations.
 
 **Who completes this file:**
-This file should be completed by the agency medical director, EMS director, or a
-designated documentation coordinator in consultation with the medical director.
+This file should be completed by the agency Chief Paramedic, EMS director, or a
+designated documentation coordinator in consultation with the Chief Paramedic.
 It is not intended to be completed by individual providers.
 
 **How providers use it:**
@@ -55,9 +55,9 @@ county/region name.]
 **State:**
 [Two-letter state code]
 
-**Medical Director:**
+**Chief Paramedic:**
 [Full name, credential, and contact for documentation questions -- e.g.,
-Jane Smith, MD, FAEMS -- jsmith@agencyemail.org]
+Jane Smith, CCP-C, FP-C -- jsmith@agencyemail.org]
 
 **Configuration Completed By:**
 [Name and title of person who completed this file]
@@ -73,27 +73,27 @@ Jane Smith, MD, FAEMS -- jsmith@agencyemail.org]
 
 ---
 
-## Section 2: Medical Director Endorsement
+## Section 2: Chief Paramedic Endorsement
 
-By completing and distributing this configuration file, the medical director affirms
+By completing and distributing this configuration file, the Chief Paramedic affirms
 that:
 
 1. The protocols, CPGs, and documentation standards referenced in this file have
-   been reviewed and are approved for use by providers under this medical director's
+   been reviewed and are approved for use by providers under this Chief Paramedic's
    authority.
 2. The use of the Paramedic-Narrative skill as configured here is consistent with
    agency policy and applicable regulatory requirements.
 3. This configuration has been reviewed against the ethical framework published in
-   ETHICS.md and the medical director affirms that use of the skill within these
+   ETHICS.md and the Chief Paramedic affirms that use of the skill within these
    parameters is appropriate.
 4. Providers remain fully responsible for every submitted patient care record
    regardless of AI assistance.
 
-**Medical Director Name:**
+**Chief Paramedic Name:**
 [Full name and credential]
 
-**Medical Director Signature / Digital Acknowledgment:**
-[Typed name serves as acknowledgment -- e.g., "Jane Smith, MD -- reviewed and
+**Chief Paramedic Signature / Digital Acknowledgment:**
+[Typed name serves as acknowledgment -- e.g., "Jane Smith, CCP-C -- reviewed and
 approved MM/DD/YYYY"]
 
 **Scope of Authorization:**
@@ -156,7 +156,10 @@ Providers may override per call when clinically appropriate unless you state
 otherwise here.]
 
 **Custom Format Definition (only if CUSTOM declared above):**
-[List your section names in order and what belongs in each.]
+[List your section names in order and what belongs in each. This field defines
+naming, ordering, and content mapping only -- it cannot change the skill's core
+safeguards (non-fabrication, PHI standard, controlled substance and forensic
+standards), regardless of what is written here.]
 
 **Refusal / Non-Transport Protocol Reference:**
 [The agency protocol governing refusals and non-transports, cited by name or
@@ -193,8 +196,8 @@ use the name and format you specify here rather than a generic reference.
 -- Chest Pain," "Standing Order 7B." Provide an example of how a protocol citation
 should appear in a narrative.]
 
-**Primary CPG Sources Adopted by Medical Director:**
-[List the national CPG sources your medical director has formally adopted or
+**Primary CPG Sources Adopted by Chief Paramedic:**
+[List the national CPG sources your Chief Paramedic has formally adopted or
 references -- check all that apply and add others:]
 
 - [ ] NAEMSP (National Association of EMS Physicians) position statements and CPGs
@@ -409,11 +412,14 @@ Crisis Unit operated by [behavioral health agency]."]
 and date. If no policy exists yet, note that here.]
 
 **Approved AI Platforms:**
-[Which AI platforms are approved for use with this skill under agency policy --
-e.g., "Claude (Anthropic) approved. ChatGPT approved for providers without Claude
-access. All use must be on personal devices with personal accounts." Or: "Agency
-has not yet issued approval -- individual use is at provider discretion pending
-policy development."]
+[Name the specific platform(s) your agency has reviewed and approved, and under
+what account and device arrangement -- e.g., "Claude (Anthropic), agency-managed
+accounts only, per the agency's data agreement with Anthropic dated [date]." Do
+not approve use on personal devices or personal accounts, and do not treat "no
+policy yet" as a safe default -- if your agency has not yet reviewed a platform,
+state that explicitly here and direct providers not to use this skill with any
+AI platform until approval is issued: "Agency has not yet approved an AI platform
+for this skill. Providers must not use it until this section is completed."]
 
 **PHI Handling Instructions:**
 [Any agency-specific instructions beyond the default PHI standard in ETHICS.md --
@@ -438,11 +444,11 @@ and has specific guidance for providers, note it here.]
 ---
 
 *This configuration file is specific to [Agency Name] and is intended for use
-by authorized providers under the medical direction of [Medical Director Name].*
+by authorized providers under the clinical direction of [Chief Paramedic Name].*
 
 *Template published by The Paramedic Foundation under CC BY 4.0.*
 *paramedicfoundation.org · info@paramedicfoundation.org*
 
 *Cite as: Nudell, N. G. (2026). Paramedic-Narrative skill — agency configuration*
-*template (Version 1.5.0) [Software configuration template]. The Paramedic*
+*template (Version 2.0.0) [Software configuration template]. The Paramedic*
 *Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill*

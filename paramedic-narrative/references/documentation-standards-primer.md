@@ -13,7 +13,7 @@ The patient care report serves multiple functions simultaneously:
   happened before they took over care.
 - **Legal record**: The PCR is discoverable, subpoenable, and may be the basis for
   testimony. Every word is permanent.
-- **Quality improvement**: Medical directors, QI officers, and researchers use PCRs to
+- **Quality improvement**: Chief Paramedics, QI officers, and researchers use PCRs to
   evaluate protocol compliance, clinical performance, and system-level trends.
 - **Billing and reimbursement**: CMS and commercial payers require documentation of
   medical necessity. The narrative must establish why transport was necessary.
@@ -42,7 +42,7 @@ Appropriate national CPG sources include:
   national evidence-based guidelines
 - American College of Emergency Physicians (ACEP): clinical policies applicable
   to prehospital settings
-- Medical director-adopted national guidelines incorporated into local scope
+- Chief Paramedic-adopted national guidelines incorporated into local scope
 
 Naming the CPG by title and source is the documentation standard when the guideline
 was the operative basis. "Per NAEMSP 2023 CPG on prehospital pain management" is
@@ -180,8 +180,9 @@ identify any elements that required elaboration beyond the standard framework.
 
 The IMIST-AMBO elements:
 
-- **I -- Identification**: Patient name, age, sex, and weight if clinically relevant
-  (pediatric or weight-based medication dosing).
+- **I -- Identification**: Age, sex, and weight if clinically relevant (pediatric
+  or weight-based medication dosing). No patient name (PHI rule) -- use "John Doe"
+  or "Jane Doe" only if a placeholder reference is needed.
 - **M -- Mechanism/Medical complaint**: Mechanism of injury for trauma (including
   kinematics and energy transfer); chief complaint and onset for medical.
 - **I -- Injuries/Information**: Injuries identified for trauma, listed anatomically;
@@ -344,8 +345,8 @@ For cardiac arrest:
 - Document ROSC: time, presenting rhythm at ROSC, hemodynamics, mental status
 - Document post-ROSC management: destination rationale (cath lab-capable facility),
   targeted temperature management decision, hemodynamic support
-- For termination of resuscitation: document criteria met per protocol, medical direction
-  contact if required, family notification
+- For termination of resuscitation: document criteria met per protocol, Chief
+  Paramedic contact if required, family notification
 
 ---
 
@@ -510,31 +511,6 @@ Document de-escalation in the Plan section. If the approach affected the assessm
 consent process, reference that connection in the Subjective or Objective section.
 
 ---
-
-## Scoring Tools and Decision Instruments
-
-When a validated scoring tool, clinical decision rule, or structured assessment
-instrument was applied, the narrative must document the tool by name, the score or
-result, the components that drove the score, and how the result informed clinical
-reasoning or the transport decision. Structured PCR fields may capture the score.
-The narrative captures the reasoning.
-
-**Cardiovascular**
-- HEART Score (chest pain): note which components elevated the risk category and how
-  the total informed disposition or treatment.
-- Killip Classification when relevant to AMI severity documentation.
-
-**Neurological**
-- Cincinnati Prehospital Stroke Scale: document which elements were positive.
-- Los Angeles Prehospital Stroke Screen (LAPSS) if applied.
-- GCS component scores (eye, verbal, motor) when clinical reasoning requires the
-  breakdown, not just the total.
-- VAN screen or CPSS for large vessel occlusion consideration.
-
-**Respiratory**
-- PERC rule: document which criteria were absent and the clinical conclusion.
-- Wells Criteria for PE if applied.
-- CURB-65 if relevant to pneumonia severity and transport decision.
 
 ## Care Pathway and Alternative Disposition Documentation
 
@@ -831,21 +807,38 @@ relevant tool was considered but not applied, document that and the reason when 
 omission is clinically meaningful.
 
 **Cardiovascular**
-- HEART Score (chest pain): note which components elevated the risk category and
-  how the total informed disposition or treatment.
+- HEART Score (chest pain), if applied: note which components elevated the risk
+  category and how the total informed disposition or treatment. Troponin is a
+  laboratory value, not a field-available one -- document a HEART Score as
+  calculated only if a troponin result was actually obtained (for example,
+  point-of-care testing on a critical care transport unit). If troponin was not
+  available, the score was not fully calculated; document what was assessed
+  without presenting it as a completed HEART Score.
 - Killip Classification when relevant to AMI severity documentation.
 
 **Neurological**
-- Cincinnati Prehospital Stroke Scale: document which elements were positive.
+- Cincinnati Prehospital Stroke Scale (CPSS): document which elements were
+  positive. "CPSS" is the same instrument as the Cincinnati Prehospital Stroke
+  Scale, not a separate tool -- it is a general stroke screen, not a large-vessel
+  occlusion (LVO) screen.
 - Los Angeles Prehospital Stroke Screen (LAPSS) if applied.
 - GCS component scores (eye, verbal, motor) when clinical reasoning requires the
   breakdown, not just the total.
-- VAN screen or CPSS for large vessel occlusion consideration.
+- VAN screen for large vessel occlusion consideration -- a distinct instrument
+  from Cincinnati/CPSS. Document separately; a positive Cincinnati/CPSS does not
+  by itself indicate a positive VAN.
 
 **Respiratory**
-- PERC rule: document which criteria were absent and the clinical conclusion.
+- PERC rule: valid only for patients already assessed as low pretest probability
+  for pulmonary embolism -- document that basis before which criteria were
+  absent and the clinical conclusion.
 - Wells Criteria for PE if applied.
-- CURB-65 if relevant to pneumonia severity and transport decision.
+- CURB-65 if relevant to pneumonia severity and transport decision. The "U"
+  (urea/BUN) component is a laboratory value not generally available in the
+  field. Document CURB-65 only when a urea/BUN value was actually obtained;
+  otherwise the field-appropriate variant is CRB-65 (the same instrument without
+  the urea component) -- name it as CRB-65 rather than presenting a partial
+  CURB-65 as complete.
 
 **Triage -- Mass Casualty and Multi-Patient Incidents**
 
@@ -874,28 +867,47 @@ omission is clinically meaningful.
 **Trauma**
 - **Revised Trauma Score (RTS)**: Document components if calculated (GCS, SBP,
   RR) and how the score informed destination decision or clinical concern.
-- **ACS Field Triage Decision Scheme (American College of Surgeons Committee on
-  Trauma)**: The published Field Triage Decision Scheme is the national standard
-  for trauma center destination decisions. When this framework was applied,
-  document which specific criteria triggered the destination decision, organized
-  by the scheme's four criterion categories:
-  - *Physiologic*: GCS <14, SBP <90, RR <10 or >29 (or need for ventilatory
-    support in infants)
-  - *Anatomic*: Penetrating injury to head/neck/torso/extremities proximal to
-    elbow or knee; chest wall instability or deformity; two or more proximal long
-    bone fractures; crushed/degloved/mangled/amputated extremity proximal to
-    wrist or ankle; pelvic fractures; open or depressed skull fracture;
-    paralysis
-  - *Mechanism of injury and evidence of high-energy impact*: Falls, high-speed
-    MVC, auto vs. pedestrian/bicyclist, motorcycle crash, penetrating injury
-  - *Special patient or system considerations*: Age extremes, anticoagulation or
-    bleeding disorders, burns with mechanism of injury, pregnancy >20 weeks,
-    EMS provider judgment
-  Document which specific criterion or criteria were met, not only the destination
-  outcome. "Transported to Level I trauma center per ACS Field Triage criteria --
-  physiologic criterion met (GCS 12, SBP 88)" is the documentation standard.
-  The criterion drives the decision; the decision alone does not document the
-  criterion.
+- **ACS Field Triage Decision Scheme** (National Guideline for the Field Triage of
+  Injured Patients, American College of Surgeons, 2021 revision): the national
+  standard for trauma center destination decisions. The 2021 revision organizes
+  criteria into RED (high-risk) and YELLOW (moderate-risk) tiers, across four
+  categories. When this framework was applied, document which specific criteria
+  triggered the destination decision, organized by these categories:
+  - *Injury Patterns* (RED): penetrating injuries to head, neck, torso, or
+    proximal extremities; skull deformity or suspected skull fracture; suspected
+    spinal injury with new motor or sensory loss; chest wall instability,
+    deformity, or suspected flail chest; suspected pelvic fracture; suspected
+    fracture of two or more proximal long bones; crushed, degloved, mangled, or
+    pulseless extremity; amputation proximal to wrist or ankle; active bleeding
+    requiring a tourniquet or wound packing with continuous pressure. Penetrating
+    injury is an Injury Patterns criterion, not a Mechanism criterion.
+  - *Mental Status and Vital Signs* (RED): unable to follow commands (motor GCS
+    <6 -- not total GCS); RR <10 or >29 breaths/min; respiratory distress or need
+    for respiratory support; room-air SpO2 <90%. Systolic BP thresholds are
+    age-banded: age 0-9, SBP <70 + (2 x age in years); age 10-64, SBP <90 mmHg or
+    heart rate greater than SBP; age 65+, SBP <110 mmHg or heart rate greater
+    than SBP.
+  - *Mechanism of Injury* (YELLOW): high-risk auto crash (partial or complete
+    ejection; significant intrusion, >12 inches at the occupant site or >18
+    inches at any site; need for extrication; death in the passenger
+    compartment; unrestrained child age 0-9 or in an unsecured child safety
+    seat; vehicle telemetry data consistent with severe injury); rider separated
+    from a transport vehicle with significant impact (motorcycle, ATV, horse, or
+    similar); pedestrian or bicycle rider thrown, run over, or with significant
+    impact; fall from height greater than 10 feet (all ages).
+  - *EMS Judgment* (YELLOW, considered alongside the above): low-level falls in
+    young children (age 5 or younger) or older adults (age 65 or older) with
+    significant head impact; anticoagulant use; suspicion of child abuse;
+    special, high-resource healthcare needs; pregnancy greater than 20 weeks;
+    burns in conjunction with trauma; preference for pediatric-capable centers
+    for children.
+  Document which specific criterion or criteria were met, not only the
+  destination outcome. "Transported to Level I trauma center per ACS Field
+  Triage criteria -- Mental Status and Vital Signs criterion met (motor GCS 4,
+  SBP 88)" is the documentation standard. The criterion drives the decision;
+  the decision alone does not document the criterion.
+  Source: American College of Surgeons, *National Guideline for the Field
+  Triage of Injured Patients* (2021), facs.org/fieldtriageguidelines.
 - **Ottawa Knee or Ankle Rules** if applied and relevant to transport or treatment.
 
 **Toxicological and substance use**

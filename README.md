@@ -7,7 +7,7 @@
 <div align="center">
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](../../releases/latest)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](../../releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Claude%20%7C%20ChatGPT%20%7C%20Gemini-teal.svg)](../../releases/latest)
 [![Free](https://img.shields.io/badge/Cost-Free-green.svg)](../../releases/latest)
 
@@ -16,7 +16,7 @@
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 
 Published by [The Paramedic Foundation](https://paramedicfoundation.org)
-Licensed under [CC BY 4.0](LICENSE.md) · Version 1.5.0
+Licensed under [CC BY 4.0](LICENSE.md) · Version 2.0.0
 
 ---
 
@@ -119,7 +119,7 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 │                                     GPTs (fits the 8,000 character limit)
 ├── paramedic-narrative.skill       ← the install file for Claude specifically
 ├── agency-config-template.md       ← standardized configuration template for
-│                                     agencies and medical directors to complete
+│                                     agencies and Chief Paramedics to complete
 ├── provider-profile-template.md    ← personal provider profile template --
 │                                     one per provider, never shared
 ├── assets/                         ← brand and design assets
@@ -135,7 +135,11 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 │   ├── TPF_ParamedicNarrative_DictationPocketCard_2026_v1.txt
 │   │                               ← 12-point dictation skeleton (text)
 │   ├── TPF_ParamedicNarrative_DictationPocketCard_2026_v1.pdf
-│   │                               ← printable one-page pocket card
+│   │                               ← printable pocket-size card (5in x 6.55in)
+│   ├── TPF_ParamedicNarrative_DictationBusinessCard_2026_v1.pdf
+│   │                               ← wallet-size card, category names only
+│   ├── TPF_ParamedicNarrative_MobileReferenceCard_2026_v1.png
+│   │                               ← tall reference image for a phone screen
 │   └── spec-addendum-sections-4-4A-4B-4C.md  ← v1.3.0 design addendum
 └── paramedic-narrative/            ← folder containing the source files
     ├── SKILL.md                    ← full clinical reference standard -- upload
@@ -155,7 +159,7 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 - **Setting up on a phone**: see the Mobile section below
 - **New provider setting up their profile**: open `provider-profile-template.md`
   (or say "build my provider profile" to the skill and it will guide you)
-- **Agency administrator or medical director**: open `agency-config-template.md`
+- **Agency administrator or Chief Paramedic**: open `agency-config-template.md`
   (or say "set up agency configuration" to the skill and it will guide you)
 - **Read the full clinical standards**: open `paramedic-narrative/SKILL.md`
 - **Read the ethical framework**: open `ETHICS.md`
@@ -225,10 +229,10 @@ an app. Once the tool is set up on your phone, you can use it anywhere.
 or authorize the violation of any agency policy, jurisdictional regulation, employer
 requirement, or regulatory prohibition on the use of AI tools in clinical settings.
 Providers are solely responsible for knowing and complying with all applicable
-policies before using this or any AI tool. If your agency, medical director, or
+policies before using this or any AI tool. If your agency, Chief Paramedic, or
 jurisdiction prohibits AI-assisted documentation tools, do not use this tool in
 that context. If you are unsure whether your use is permitted, ask your supervisor
-or medical director before proceeding.
+or Chief Paramedic before proceeding.
 
 **Describing your call -- voice input:**
 
@@ -348,8 +352,13 @@ clinical reference standard must be pasted at the start of each session.
 6. Then describe your call
 
 The behavioral rules persist via Custom Instructions. The clinical reference
-content must be pasted each session because M365 Copilot does not have a
-persistent Knowledge File upload feature equivalent to ChatGPT Custom GPTs.
+content is pasted each session because the Personalization > Custom Instructions
+path used above has no persistent knowledge-upload feature equivalent to ChatGPT
+Custom GPTs. Microsoft 365 Copilot separately supports declarative agents (built
+via Copilot Studio / Agent Builder) that do support persistent knowledge sources
+alongside instructions -- if your organization has that capability available and
+wants a one-time setup instead of a per-session paste, a declarative agent may be
+a better fit than the workflow above; that setup is not yet documented here.
 
 **Note:** Some organizations restrict Copilot customization through IT policy.
 If the Custom Instructions field is unavailable, paste both `chatgpt-instructions.md`
@@ -382,18 +391,30 @@ browser (Safari on iOS, Chrome on Android) instead:
 4. To upload your agency config: same process, upload as a Project file
 
 **ChatGPT on mobile:**
-1. In your phone browser, open `chatgpt-instructions.md`, tap Raw, select all,
-   copy
-2. Open the ChatGPT app > **Explore GPTs** > find your GPT > tap edit (pencil)
-   > **Configure** > paste into **Instructions**
-3. For the Knowledge File: open `paramedic-narrative/SKILL.md` in your browser,
-   tap Raw, use the share sheet to save to Files/Downloads
-4. In the ChatGPT GPT editor > **Knowledge** > **Upload files** > select SKILL.md
+Creating and editing a Custom GPT's Instructions and Knowledge Files is a
+web-only feature -- the ChatGPT mobile app can only *use* a GPT that already
+exists, not create or edit one. Do the setup itself in your phone's browser,
+then use the ChatGPT app afterward.
+1. In your phone browser, go to `chatgpt.com`, sign in, and go to
+   **Explore GPTs > Create > Configure**
+2. In a second browser tab, open `chatgpt-instructions.md` in this repository,
+   tap Raw, select all, copy, and paste it into the **Instructions** field
+3. Scroll to **Knowledge**, tap **Upload files**, and upload
+   `paramedic-narrative/SKILL.md` (download it from this repository first if
+   your browser requires a local file)
+4. Save the GPT. From then on, open the ChatGPT app and use this GPT normally --
+   the app is only unable to *edit* it, not use it
 
 **Gemini on mobile:**
-1. In your phone browser, open `system-prompt.md`, tap Raw, select all, copy
-2. Open the Gemini app > **Gems** > **New Gem** > paste into the instructions field
-3. Save the Gem
+Creating, editing, or deleting a Gem is a web-only feature -- the Gemini mobile
+app can only *use* a Gem that was already created at gemini.google.com. Do the
+setup itself in your phone's browser, then use the Gemini app afterward.
+1. In your phone browser, go to `gemini.google.com`, sign in, and go to
+   **Gems > New Gem**
+2. In a second browser tab, open `system-prompt.md` in this repository, tap Raw,
+   select all, copy, and paste it into the instructions field
+3. Save the Gem. From then on, open the Gemini app and use this Gem normally --
+   the app is only unable to *create or edit* it, not use it
 
 **Copilot on mobile:**
 1. In the Copilot app, tap your profile > **Settings** > **Personalization** >
@@ -428,7 +449,7 @@ If your agency has not yet created a configuration file, you can provide basic
 context at the start of any session:
 
 > "I work for [Agency] in [State]. We use [PCR platform]. Our protocols are
-> [protocol system name]. My medical director is [name]."
+> [protocol system name]. My Chief Paramedic is [name]."
 
 The skill will apply that context for the session.
 
@@ -436,22 +457,22 @@ The skill will apply that context for the session.
 in the Configure panel, or upload it as an additional Knowledge File alongside
 `SKILL.md`. Both approaches work.
 
-### For agencies and medical directors
+### For agencies and Chief Paramedics
 
 The repository includes a standardized **agency configuration template** that medical
 directors and agency administrators can complete once and distribute to all providers.
 When every provider uses the same configuration file, every narrative produced in
 your system reflects your protocols, your ePCR platform, your documentation standard,
-and your medical director's clinical expectations automatically.
+and your Chief Paramedic's clinical expectations automatically.
 
 **The template file is:** `agency-config-template.md`
 
 It covers:
 - Agency identity and service area context
-- Medical director endorsement and scope of authorization
+- Chief Paramedic endorsement and scope of authorization
 - ePCR platform and narrative field specifications
 - Documentation standard and minimum narrative requirements
-- Protocol system name, version, and CPG sources adopted by medical director
+- Protocol system name, version, and CPG sources adopted by Chief Paramedic
 - Specific protocol titles for common call types
 - Controlled substance policy including witness, waste, and reconciliation requirements
 - Optional prompt settings -- turn specific skill prompts on, off, or required
@@ -466,7 +487,7 @@ It covers:
 2. Open it in any text editor (Notepad, TextEdit, Word set to plain text)
 3. Fill in each section -- incomplete sections are fine, the skill applies
    universal standards for anything left blank
-4. Have your medical director review and complete Section 2 (endorsement)
+4. Have your Chief Paramedic review and complete Section 2 (endorsement)
 5. Save the completed file as `agency-config.md`
 6. Post it somewhere all your providers can download it -- your agency intranet,
    shared drive, ePCR document library, or a protected page on your website
@@ -564,8 +585,10 @@ Begin a session and describe your call. You can provide information in any forma
 - A structured list of findings and interventions
 - A detailed walkthrough of the encounter
 
-**Do not photograph or upload patient records, vital sign strips with patient
-identifiers, or any image containing PHI.** See Section 6 of [ETHICS.md](ETHICS.md).
+**Never photograph or upload an image in which any direct patient identifier is
+visible.** A document may be photographed only once every identifier on it has
+been cropped or covered before the shot; if it can't be fully redacted first,
+dictate the content instead. See Section 6 of [ETHICS.md](ETHICS.md).
 
 The skill will identify what additional information is needed for a complete narrative,
 ask only for what is missing and narrative-relevant (not for information already
@@ -575,7 +598,8 @@ declared narrative format (Clinical Summary / S / O / A / P by default).
 **Dictating a call:** talk through the 12-point verbal report skeleton in any
 order -- call frame, arrival picture, patient, story, pertinent negatives, exam
 highlights, numbers, thinking, doing, moving, handoff, exceptions. A printable
-pocket card is in [`docs/`](docs/). Fragments are fine: you can document across
+pocket card, a wallet-size business card, and a mobile-reference image sized for
+a phone screen are all in [`docs/`](docs/). Fragments are fine: you can document across
 multiple messages over hours, and the skill tracks what is still missing rather
 than re-interviewing you. Documenting long after a call? Say so -- the skill
 switches to targeted recall questions built from what it already knows.
@@ -642,7 +666,13 @@ or fatality, and any scene where law enforcement is investigating.
 | `paramedic-narrative/SKILL.md` | Full clinical reference standard | ChatGPT Knowledge File, Copilot per-session paste, all (human-readable) |
 | `paramedic-narrative/references/documentation-standards-primer.md` | Standards reference | Loaded on demand |
 
-All versions contain identical clinical logic. Only the packaging differs.
+All versions are written to express the same clinical logic, but ChatGPT's
+Knowledge File is consulted through retrieval rather than read in full on every
+turn, so behavior there is not guaranteed identical to Claude, Gemini, or a
+direct-API session in every case -- the most safety-critical rules (privacy,
+controlled substance, forensic, non-fabrication) are duplicated directly into
+`chatgpt-instructions.md`'s Instructions field for this reason, rather than left
+to Knowledge File retrieval alone.
 
 ---
 
@@ -667,7 +697,7 @@ Care.* The Paramedic Foundation / American College of Paramedics.
 
 ## Version Control
 
-Current version: **1.5.0**
+Current version: **2.0.0**
 
 Version history and release notes are maintained in this repository. Check
 [Releases](../../releases) for updates. Providers and agencies using this tool in
@@ -718,7 +748,7 @@ against the version shown at the top of this README.
 
 ## Contributing
 
-Contributions are welcome from providers, agencies, educators, medical directors,
+Contributions are welcome from providers, agencies, educators, Chief Paramedics,
 and researchers. See Section 11 of [ETHICS.md](ETHICS.md) for full guidance.
 
 Ways to contribute:
@@ -741,7 +771,7 @@ All contributions are reviewed by The Paramedic Foundation before incorporation.
 If you use or adapt this skill in research, policy work, or publications:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 1.5.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 2.0.0) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---

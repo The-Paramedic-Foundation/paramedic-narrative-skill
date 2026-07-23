@@ -59,11 +59,12 @@ Skip what is in structured fields.
 
 --------------------------------------------------
 PHOTO SHORTCUTS: monitor screen, med vials, facility
-paperwork, glove notes. Snap it, send it, confirm the
-transcription.
+paperwork, glove notes.
 
-HIPAA: no identifiable information in photos. Redact
-names, DOBs, MRNs, and faces before uploading.
+HIPAA: crop or cover names, DOBs, MRNs, and faces
+BEFORE you take the photo. Can't fully redact it?
+Don't shoot it -- dictate instead. Then confirm the
+transcription.
 
 HOURS LATER? Just say so. You'll get targeted recall
 questions instead of a blank interview.
@@ -78,4 +79,4 @@ The Paramedic Foundation
 www.paramedicfoundation.org | info@paramedicfoundation.org
 Part of Paramedic-Narrative. Published by The Paramedic
 Foundation under CC BY 4.0. (c) 2026 The Paramedic Foundation
-Version 1 | July 23, 2026
+Version 2 | July 23, 2026

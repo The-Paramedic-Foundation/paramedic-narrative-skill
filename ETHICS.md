@@ -2,7 +2,7 @@
 
 **The Paramedic Foundation**
 Published under Creative Commons Attribution 4.0 International (CC BY 4.0)
-paramedicfoundation.org · Version 1.2.0
+paramedicfoundation.org · Version 2.0.0
 
 ---
 
@@ -145,7 +145,7 @@ without a safety framework.
 **Potentially illegal.** Clinical decision-making by paramedics occurs under statutory
 scope-of-practice authority granted to the licensed individual. Introducing an
 unvalidated AI system as a decision-making agent may constitute practice outside
-authorized scope, unlicensed practice, or deviation from medical director protocols
+authorized scope, unlicensed practice, or deviation from Chief Paramedic protocols
 in ways that carry civil and criminal exposure. No regulatory framework currently
 authorizes autonomous AI clinical decision-making in paramedicine.
 
@@ -182,24 +182,31 @@ Before using any AI tool for clinical documentation, confirm that your agency ha
 reviewed the platform's data handling practices for compliance with the Health
 Insurance Portability and Accountability Act (HIPAA) and applicable state law.
 
-### 6.2 Prohibition on Photographing PHI
+### 6.2 Photographing Documents That May Contain PHI
 
-**Do not photograph, scan, or upload images of any document, screen, or object that
-contains patient-identifying information.** This includes:
+The governing rule is the content visible in the photograph, not the type of document.
+**Never photograph, scan, or upload an image in which any direct patient identifier is
+visible.** A document that may carry identifiers -- a patient care report, run sheet,
+hospital record, ePCR screen, facesheet, transfer form, medication label, or
+identification card -- may be photographed only after every direct identifier on it
+(patient name, date of birth, address, medical record number, or any other identifier)
+has been cropped or covered so that none remains visible in the frame. If a document's
+identifiers cannot be fully removed before the photograph is taken, do not photograph
+it -- dictate the clinical content instead. A properly redacted photograph of such a
+document is not a PHI violation; an unredacted one is, regardless of what the document
+is called.
 
-- Patient care reports, run sheets, or hospital records
-- Medication bottles, prescription labels, or identification cards
-- Any document containing a patient's name, date of birth, address, or other
-  direct identifier
+### 6.3 Photographing Images Where the Identifier Cannot Be Redacted
 
-### 6.3 Prohibition on Photographing Identifiable Images
-
-**Do not photograph or upload images that could identify a patient or their
-circumstances.** This includes:
+**Do not photograph or upload images where the identifying element is the image itself
+and cannot meaningfully be cropped or covered out.** This includes:
 
 - Images of a patient's face or identifiable physical characteristics
 - Vehicle license plates, which may link a patient to an event
 - Property, locations, or objects that could identify a specific patient in context
+
+Unlike Section 6.2, no redaction step makes these acceptable to photograph -- the
+identifying content is inseparable from the image.
 
 ### 6.4 Camera Metadata
 
@@ -278,7 +285,7 @@ resulting from your use of this tool.
 ### 7.7 Disclosure and Compliance
 
 You are responsible for knowing and complying with your agency's policies, your
-state's requirements, and any applicable medical director guidance on AI-assisted
+state's requirements, and any applicable Chief Paramedic guidance on AI-assisted
 documentation. When disclosure of AI tool use is required, you will disclose.
 
 ---
@@ -312,7 +319,7 @@ Governance capacity must mature alongside adoption. AI literacy and critical app
 of algorithmic tools are becoming components of professional responsibility, not
 elective competencies.
 
-Agencies and medical directors are encouraged to:
+Agencies and Chief Paramedics are encouraged to:
 
 - Develop explicit organizational policy on AI documentation tool use
 - Include AI tool use in quality assurance and quality improvement review
@@ -350,7 +357,7 @@ from which they were derived.
 ## 11. Contributing and Submitting Improvements
 
 This is an open, community-maintained professional resource. Providers, agencies,
-educators, medical directors, and researchers are encouraged to contribute.
+educators, Chief Paramedics, and researchers are encouraged to contribute.
 
 **Ways to contribute:**
 
@@ -415,7 +422,7 @@ paramedicfoundation.org.
 Suggested citation:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 1.2.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 2.0.0) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---
