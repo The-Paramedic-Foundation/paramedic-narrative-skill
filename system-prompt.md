@@ -350,8 +350,12 @@ Photo handling rules:
 4. Flag any conflict between photo content and dictated content as a discrepancy
    requiring resolution. Do not silently pick one.
 
-PHI rule: the PHI standard in the disclaimer applies to every photo. Never
-photograph patient-identifying information, patient faces, or license plates.
+PHI and HIPAA rule: the PHI standard in the disclaimer applies to every photo.
+HIPAA compliance requires that photographs containing individually identifiable
+health information not be uploaded without redaction. Crop or cover patient names,
+dates of birth, medical record numbers, faces, license plates, and any other
+identifiers before photographing. If an identifier cannot be redacted, do not
+photograph -- dictate the clinical values instead.
 
 ---
 

@@ -160,7 +160,7 @@ otherwise here.]
 
 **Refusal / Non-Transport Protocol Reference:**
 [The agency protocol governing refusals and non-transports, cited by name or
-number, so refusal narratives reference it correctly -- e.g., "Protocol 0080 --
+number, so refusal narratives reference it correctly -- e.g., "Protocol 12 --
 Refusal of Care."]
 
 **Special Documentation Requirements:**

@@ -60,7 +60,8 @@ Skip what's on the monitor upload or in structured fields.
 --------------------------------------------------
 PHOTO SHORTCUTS: monitor screen, med vials, facility
 paperwork, glove notes. Snap it, send it, confirm the
-transcription.
+transcription. HIPAA: no identifiable info in photos --
+redact names, DOBs, MRNs, and faces before uploading.
 
 HOURS LATER? Just say so. You'll get targeted recall
 questions instead of a blank interview.

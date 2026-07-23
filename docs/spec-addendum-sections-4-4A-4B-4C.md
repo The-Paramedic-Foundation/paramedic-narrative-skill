@@ -19,7 +19,7 @@ h. **HEAD-TO-TOE** — systems-based exam-driven narrative, common for trauma
 i. **DRAATT** — Dispatch, Response, Arrival, Assessment, Treatment, Transport
 j. **AT CHART** — Arrival, Treatment, Chief complaint, History, Assessment, Rx, Transport
 k. **FACT** — Findings, Assessment, Care, Transport; a lean format for BLS and low-acuity calls
-l. **REFUSAL/NON-TRANSPORT** template — capacity assessment, risks explained, alternatives offered, who witnessed, per agency protocol such as UCHealth 0080
+l. **REFUSAL/NON-TRANSPORT** template — capacity assessment, risks explained, alternatives offered, who witnessed, per the agency's refusal protocol as cited in the agency configuration
 m. **IFT** template — interfacility transfer: sending/receiving providers, reason for transfer, care during transport, records and lines/devices accompanying patient
 n. **CUSTOM** — agency-defined section order stored in the profile
 
@@ -34,13 +34,15 @@ Add a first-class intake mode combining images and voice/verbal transcription, d
 Accepted photo inputs, each with its own transcription-and-verify handler:
 
 a. Monitor screen (vitals, trends, 12-lead)
-b. ESO screen photos (Vitals tab, Flowchart, Assessments, demographics)
+b. ePCR screen photos (vitals, flowchart, assessments, demographics)
 c. Medication vials/packaging (name, concentration, lot if visible; dose given still comes from provider)
 d. Facility paperwork (med lists, facesheets, transfer forms, POLST/DNR)
 e. Scene photos where agency policy permits (mechanism, pill bottles, living conditions relevant to disposition)
 f. Handwritten field notes or glove notes
 
 **Photo handling rules:** transcribe exactly what is visible, present the transcription back for verification before use, never infer values from blur or partial visibility (mark [ILLEGIBLE] instead), and flag any conflict between photo content and dictated content as a discrepancy requiring resolution. Photos supplement dictation; they never substitute for provider confirmation.
+
+**HIPAA reminder:** photographs containing individually identifiable health information must not be uploaded without redaction. Crop or cover patient names, dates of birth, medical record numbers, faces, and other identifiers before photographing. Camera metadata may embed location data that itself constitutes PHI.
 
 ---
 

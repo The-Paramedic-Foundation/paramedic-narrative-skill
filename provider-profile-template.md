@@ -56,9 +56,9 @@ commands -- keep it brief and recognizable.
 
 **Agency 1:**
 - Full name: [Agency full legal name]
-- Short name: [e.g., "UCHealth," "NCRETAC," "County Fire"]
+- Short name: [e.g., "County EMS," "Regional Health," "County Fire"]
 - Role(s) at this agency: [e.g., Emergency Paramedic, Community Paramedic]
-- Config file: [e.g., agency-config-uchealth-ems.md]
+- Config file: [e.g., agency-config-county-ems.md]
 
 **Agency 2:**
 - Full name:
@@ -76,7 +76,7 @@ commands -- keep it brief and recognizable.
 
 **Default agency:**
 [Which agency should be assumed active at session start if you do not specify --
-e.g., "UCHealth EMS." Leave blank if you always specify.]
+e.g., "County EMS." Leave blank if you always specify.]
 
 ---
 

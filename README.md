@@ -667,6 +667,44 @@ ongoing documentation workflows should review updates periodically.
 Significant updates affecting clinical content, privacy standards, or the ethical
 framework will be clearly noted in release notes.
 
+### Updating an existing installation to a new version
+
+Updates are not automatic on any platform. When a new version is released, each
+provider updates their own installation:
+
+**Claude:**
+1. Download the new `paramedic-narrative.skill` from the
+   [Releases](../../releases/latest) page.
+2. In your Claude Project, go to **Settings > Skills**, remove the old
+   Paramedic-Narrative skill, and upload the new `.skill` file.
+3. Your provider profile, agency configuration files, and past conversations
+   are unaffected -- only the skill itself is replaced.
+
+**ChatGPT (Custom GPT):**
+1. Copy the new `chatgpt-instructions.md` and paste it over the old contents of
+   the **Instructions** field in your GPT's Configure panel.
+2. In **Knowledge**, delete the old `SKILL.md` and upload the new one. Do not
+   leave both -- the GPT may consult the outdated copy.
+3. Save the GPT.
+
+**Gemini (Gem):**
+1. Copy the new `system-prompt.md` and paste it over the old contents of your
+   Gem's instructions field. Re-paste your agency configuration below it if you
+   had one. Save.
+
+**Microsoft Copilot:**
+1. Update Custom Instructions with the new `chatgpt-instructions.md` contents.
+2. Use the new `SKILL.md` for your per-session paste going forward.
+
+**Agency administrators:** when you distribute a new agency configuration file
+version, the same rule applies -- providers must replace the old file in their
+Claude Project or re-paste it on other platforms. Increment the version in
+Section 11 of the configuration and notify providers.
+
+**How to tell which version you are running:** ask the assistant "what version
+are you?" -- the version is stated in the skill and system prompt -- or compare
+against the version shown at the top of this README.
+
 ---
 
 ## Contributing
