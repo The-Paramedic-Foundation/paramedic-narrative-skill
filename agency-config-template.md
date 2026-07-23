@@ -1,7 +1,7 @@
 # Paramedic-Narrative Skill — Agency Configuration Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 1.2.0
+paramedicfoundation.org · Version 1.3.0
 
 ---
 
@@ -147,8 +147,21 @@ treatments with indication and response, and transfer of care with receiving
 provider name."]
 
 **Narrative Format Required:**
-[e.g., SOAP, CHART, DAR, free-form, or "Paramedic-Narrative SOAP format is
-approved for agency use"]
+[Declare the narrative format your agency requires. The skill natively supports:
+SOAP (default), SOAPE, SOAPIER, CHART, CHARTE, DCHART-E, CHRONOLOGICAL,
+HEAD-TO-TOE, DRAATT, AT CHART, FACT, plus dedicated REFUSAL/NON-TRANSPORT and
+IFT templates and a CUSTOM agency-defined section order. Example: "DCHART-E
+required for all 911 responses; IFT template for interfacility transfers."
+Providers may override per call when clinically appropriate unless you state
+otherwise here.]
+
+**Custom Format Definition (only if CUSTOM declared above):**
+[List your section names in order and what belongs in each.]
+
+**Refusal / Non-Transport Protocol Reference:**
+[The agency protocol governing refusals and non-transports, cited by name or
+number, so refusal narratives reference it correctly -- e.g., "Protocol 0080 --
+Refusal of Care."]
 
 **Special Documentation Requirements:**
 [Any agency-specific requirements not covered above -- e.g., mandatory supervisor
@@ -410,5 +423,5 @@ by authorized providers under the medical direction of [Medical Director Name].*
 *paramedicfoundation.org · info@paramedicfoundation.org*
 
 *Cite as: Nudell, N. G. (2026). Paramedic-Narrative skill — agency configuration*
-*template (Version 1.2.0) [Software configuration template]. The Paramedic*
+*template (Version 1.3.0) [Software configuration template]. The Paramedic*
 *Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill*

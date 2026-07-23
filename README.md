@@ -7,7 +7,7 @@
 <div align="center">
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](../../releases/latest)
+[![Version](https://img.shields.io/badge/Version-1.3.0-blue.svg)](../../releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Claude%20%7C%20ChatGPT%20%7C%20Gemini-teal.svg)](../../releases/latest)
 [![Free](https://img.shields.io/badge/Cost-Free-green.svg)](../../releases/latest)
 
@@ -16,7 +16,7 @@
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 
 Published by [The Paramedic Foundation](https://paramedicfoundation.org)
-Licensed under [CC BY 4.0](LICENSE.md) · Version 1.2.0
+Licensed under [CC BY 4.0](LICENSE.md) · Version 1.3.0
 
 ---
 
@@ -27,8 +27,12 @@ documentation. It is an editorial tool designed for paramedics and EMTs who use 
 language model tools and want a structured, clinically rigorous, non-hallucinating
 documentation assistant.
 
-It produces SOAP-format PCR narratives grounded in one principle: **the narrative
-explains the WHY. Structured PCR fields capture the WHAT and WHEN.**
+It produces PCR narratives in your agency's declared format -- SOAP with Clinical
+Summary by default, with native support for SOAPE, SOAPIER, CHART, CHARTE,
+DCHART-E, CHRONOLOGICAL, HEAD-TO-TOE, DRAATT, AT CHART, FACT, dedicated
+REFUSAL/NON-TRANSPORT and IFT templates, and CUSTOM agency-defined section
+orders -- all grounded in one principle: **the narrative explains the WHY.
+Structured PCR fields capture the WHAT and WHEN.**
 
 The skill does not restate vital signs, medication doses, or exam findings already
 captured in your PCR platform. It captures what structured fields cannot: clinical
@@ -66,7 +70,13 @@ Read [ETHICS.md](ETHICS.md) before use.
 
 ## What This Tool Does
 
-- Produces SOAP-format PCR narrative drafts from provider-supplied information
+- Produces PCR narrative drafts from provider-supplied information in your
+  agency's declared narrative format (14 formats supported, per-call override)
+- Accepts photo plus dictation intake: monitor screens, med vials, facility
+  paperwork, and handwritten notes, transcribed exactly and verified -- never
+  inferred from blur
+- Supports fragmented documentation across sessions and targeted memory-jogging
+  recall questions when documenting hours after a call
 - Captures clinical reasoning, differential rationale, and history source attribution
   that structured fields cannot hold
 - Applies an elevated evidentiary standard for forensic and high-acuity calls
@@ -114,12 +124,18 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 │   ├── pn-ecg.svg                  ← ECG stylistic element (SVG source)
 │   ├── pn-social-preview.png       ← GitHub social preview card (1280x640)
 │   └── pn-social-preview.svg       ← social preview card (SVG source)
+├── docs/                           ← provider-facing documents
+│   ├── dictation-pocket-card.txt   ← 12-point dictation skeleton (text)
+│   ├── dictation-pocket-card.pdf   ← printable one-page pocket card
+│   └── spec-addendum-sections-4-4A-4B-4C.md  ← v1.3.0 design addendum
 └── paramedic-narrative/            ← folder containing the source files
     ├── SKILL.md                    ← full clinical reference standard -- upload
     │                                 this as a Knowledge File in ChatGPT
     └── references/
-        └── documentation-standards-primer.md  ← detailed documentation
-                                                  standards reference
+        ├── documentation-standards-primer.md  ← detailed documentation
+        │                                         standards reference
+        └── narrative-formats.md    ← section definitions and quality
+                                      checklists for all supported formats
 ```
 
 **You only need one or two of these depending on who you are:**
@@ -544,8 +560,16 @@ identifiers, or any image containing PHI.** See Section 6 of [ETHICS.md](ETHICS.
 
 The skill will identify what additional information is needed for a complete narrative,
 ask only for what is missing and narrative-relevant (not for information already
-captured in your structured PCR fields), and produce a draft in Clinical Summary /
-S / O / A / P format.
+captured in your structured PCR fields), and produce a draft in your agency's
+declared narrative format (Clinical Summary / S / O / A / P by default).
+
+**Dictating a call:** talk through the 12-point verbal report skeleton in any
+order -- call frame, arrival picture, patient, story, pertinent negatives, exam
+highlights, numbers, thinking, doing, moving, handoff, exceptions. A printable
+pocket card is in [`docs/`](docs/). Fragments are fine: you can document across
+multiple messages over hours, and the skill tracks what is still missing rather
+than re-interviewing you. Documenting long after a call? Say so -- the skill
+switches to targeted recall questions built from what it already knows.
 
 Every draft ends with a mandatory provider review disclaimer. Review the draft
 carefully, correct any errors, verify all [VERIFY] items, and approve before
@@ -634,7 +658,7 @@ Care.* The Paramedic Foundation / American College of Paramedics.
 
 ## Version Control
 
-Current version: **1.2.0**
+Current version: **1.3.0**
 
 Version history and release notes are maintained in this repository. Check
 [Releases](../../releases) for updates. Providers and agencies using this tool in
@@ -670,7 +694,7 @@ All contributions are reviewed by The Paramedic Foundation before incorporation.
 If you use or adapt this skill in research, policy work, or publications:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 1.2.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 1.3.0) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---

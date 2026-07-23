@@ -2,9 +2,11 @@
 name: paramedic-narrative
 description: >
   PCR narrative documentation assistant for paramedics and EMTs. Produces compliant,
-  non-hallucinated SOAP-format narratives that capture clinical reasoning, scene context,
-  differential rationale, medication indication and response, controlled substance audit
-  trails, and forensic evidentiary detail -- without duplicating structured PCR fields.
+  non-hallucinated narratives in the agency's declared format (SOAP, SOAPE, CHART,
+  DCHART-E, and others) that capture clinical reasoning, scene context, differential
+  rationale, medication indication and response, controlled substance audit trails,
+  and forensic evidentiary detail -- without duplicating structured PCR fields.
+  Accepts photo plus dictation intake and fragmented input across sessions.
   This is an editorial tool only. It does not make clinical decisions and must never be
   used for that purpose. Use this skill whenever a provider asks to document a call,
   write a narrative, draft a patient care report, or document any paramedicine patient
@@ -53,7 +55,7 @@ conduct.
 
 ## Version
 
-Current version: **1.2.0**
+Current version: **1.3.0**
 
 Version history is maintained at:
 https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
@@ -446,8 +448,11 @@ New call or continuation. Medical, trauma, or combined. Forensic considerations
 triggered or not. Note this and proceed.
 
 ### Step 2: Accept inputs as provided
-Use what is given. Flag clinically significant abnormal values inline where they need
-narrative explanation. Do not present a transcription table back for confirmation.
+Use what is given, in any combination of dictation, typed fragments, and photos
+(see Photo Plus Dictation Intake below). Flag clinically significant abnormal values
+inline where they need narrative explanation. Do not present a transcription table
+back for confirmation. Accept partial input across multiple messages -- fragments
+accumulate toward one call (see Asynchronous and Delayed Recall Support below).
 
 ### Step 3: Ask only for what is missing and narrative-relevant
 Do not ask about anything already captured in structured fields. Categories that may
@@ -493,8 +498,109 @@ need narrative input:
   Alternative Disposition Documentation section)
 
 ### Step 4: Draft
-Produce the narrative in the structure below. Mark gaps [VERIFY]. End with the
-provider review disclaimer.
+Produce the narrative in the active narrative format (see Narrative Formats below).
+Mark gaps [VERIFY]. End with the provider review disclaimer.
+
+---
+
+## Photo Plus Dictation Intake
+
+A first-class intake mode combining images and voice or typed input, designed for
+use in the truck, at the hospital, or hours later. Photos supplement dictation;
+they never substitute for provider confirmation.
+
+**Accepted photo inputs**, each with its own transcription-and-verify handling:
+
+a. Monitor screen (vitals, trends, 12-lead)
+b. ePCR screen photos (vitals tab, flowchart, assessments, demographics)
+c. Medication vials or packaging (name, concentration, lot if visible; the dose
+   given still comes from the provider)
+d. Facility paperwork (medication lists, facesheets, transfer forms, POLST/DNR)
+e. Scene photos where agency policy permits (mechanism, pill bottles, living
+   conditions relevant to disposition)
+f. Handwritten field notes or glove notes
+
+**Photo handling rules:**
+
+1. Transcribe exactly what is visible.
+2. Present the transcription back for verification before use.
+3. Never infer values from blur or partial visibility -- mark [ILLEGIBLE] instead.
+4. Flag any conflict between photo content and dictated content as a discrepancy
+   requiring resolution. Do not silently pick one.
+
+**PHI rule:** The PHI standard in the Disclaimer section and ETHICS.md applies to
+every photo. Never photograph patient-identifying information, patient faces, or
+license plates. Crop or cover identifying fields before photographing. Camera
+metadata may embed location data that itself constitutes PHI.
+
+---
+
+## Suggested Verbal Report Format for Dictation
+
+A dictation skeleton for providers describing a call by voice. It is a prompt
+order, not a rigid script -- accept it in any order and in fragments. A provider
+who talks through this list once produces enough raw material for a complete
+narrative in any target format. A printable pocket card version is maintained in
+the repository at `docs/dictation-pocket-card.txt` and `docs/dictation-pocket-card.pdf`.
+
+1. **CALL FRAME**: unit, dispatch complaint, response mode, scene type, other
+   agencies on scene and their role, any delays and why.
+2. **ARRIVAL PICTURE**: where the patient was found, position, first impression,
+   who was present, scene observations that shaped decisions.
+3. **PATIENT**: age, sex, weight if estimated, baseline status if known.
+4. **STORY**: chief complaint in patient's words, onset, duration, mechanism,
+   what makes it better or worse, what happened before EMS arrived, who gave the
+   history and how reliable.
+5. **PERTINENT NEGATIVES**: what the patient specifically denied.
+6. **EXAM HIGHLIGHTS**: only findings that drove decisions or are not going in
+   structured fields.
+7. **NUMBERS**: vitals if not on monitor upload, trends, anything abnormal and
+   the provider's read on why.
+8. **THINKING**: working diagnosis, what else was considered, what ruled the
+   others down, protocol used.
+9. **DOING**: each treatment and why, anything withheld and why, patient response.
+10. **MOVING**: transport decision and destination rationale, how the patient was
+    moved, position and why, condition on arrival.
+11. **HANDOFF**: who received report, what was transferred with the patient,
+    belongings.
+12. **EXCEPTIONS**: anything unusual, refusals of specific interventions, delays,
+    equipment issues, anything a reviewer should understand.
+
+---
+
+## Asynchronous and Delayed Recall Support
+
+Busy providers document what they can when they can. Apply these behaviors:
+
+a. **Fragment accumulation**: accept partial input across multiple messages over
+   hours. Maintain a running structured worksheet for the call, track what is
+   captured and what is missing, and never ask for anything already provided.
+
+b. **Resume-anywhere**: on return, open with a one-line status ("Have scene,
+   story, and vitals photo; still need thinking, doing, and handoff") rather than
+   restarting the interview.
+
+c. **Memory-jogging interview for delayed documentation**: when the provider
+   indicates time has passed, switch from open-ended prompts to targeted recall
+   questions built from what IS known, because recognition beats free recall hours
+   later. Techniques: anchor to sequence ("What happened right after you got the
+   first 12-lead?"), anchor to people ("What did the fire crew do while you were
+   getting access?"), anchor to decisions ("You went emergent to the cath-capable
+   facility; what tipped that decision?"), anchor to the senses ("What did you
+   notice when you first walked in the door?"), and anchor to exceptions
+   ("Anything about this call that didn't go the usual way?").
+
+d. **Gap surfacing by call type**: run the applicable call-type prompt checklist
+   against accumulated fragments and ask only about unaddressed items (e.g., for
+   a fall: anticoagulants, LOC, SMR decision, NAT consideration).
+
+e. **Honest gaps**: if the provider genuinely cannot recall a detail, the
+   narrative omits it or marks it [VERIFY]. Never fill memory gaps with plausible
+   content. Recall prompts uncover memories; they do not suggest answers.
+
+f. **Timestamp honesty**: if documentation occurs significantly after the call
+   and the agency requires it, support a late-entry notation per the agency
+   configuration.
 
 ---
 
@@ -614,7 +720,51 @@ rather than a single value when the level changed during the encounter.
 
 ---
 
+## Narrative Formats
+
+The skill natively supports the following narrative formats. The active format is
+declared in the agency configuration (Section 4, Narrative Format Required), with
+per-call override available -- a provider may say "use CHART for this one" at any
+time. If no format is declared, SOAP with Clinical Summary is the default. Section
+definitions and a quality checklist for each format are maintained in
+`references/narrative-formats.md`.
+
+a. **SOAPE** -- Clinical Summary plus Subjective, Objective, Assessment, Plan,
+   Evaluation
+b. **SOAP** -- standard four-section variant (default)
+c. **SOAPIER** -- Subjective, Objective, Assessment, Plan, Intervention,
+   Evaluation, Revision
+d. **DCHART-E** -- Dispatch, Chief complaint, History, Assessment, Rx/Treatment,
+   Transport, Exceptions
+e. **CHART** -- Chief complaint, History, Assessment, Rx/Treatment, Transport
+f. **CHARTE** -- CHART plus Exceptions
+g. **CHRONOLOGICAL** -- timeline narrative from dispatch to transfer of care
+h. **HEAD-TO-TOE** -- systems-based exam-driven narrative, common for trauma
+i. **DRAATT** -- Dispatch, Response, Arrival, Assessment, Treatment, Transport
+j. **AT CHART** -- Arrival, Treatment, Chief complaint, History, Assessment,
+   Rx, Transport
+k. **FACT** -- Findings, Assessment, Care, Transport; a lean format for BLS and
+   low-acuity calls
+l. **REFUSAL/NON-TRANSPORT** template -- capacity assessment, risks explained,
+   alternatives offered, who witnessed, per agency protocol
+m. **IFT** template -- interfacility transfer: sending and receiving providers,
+   reason for transfer, care during transport, records and lines/devices
+   accompanying the patient
+n. **CUSTOM** -- agency-defined section order stored in the agency configuration
+
+The Clinical Summary statement remains an optional labeled opening paragraph
+compatible with any format above. All core standards in this skill -- the ABC/LOC
+cluster, medication and controlled substance standards, forensic standard, scoring
+tools, [VERIFY] tagging -- apply in every format. Only the section structure
+changes.
+
+---
+
 ## Narrative Structure
+
+The structure below describes the default SOAP-with-Clinical-Summary format. When
+another format is active, map the same content standards onto that format's
+sections per `references/narrative-formats.md`.
 
 ### Clinical Summary
 Labeled opening paragraph. Self-contained. Demographics, chief complaint, key findings,
@@ -1167,3 +1317,6 @@ documentation.
   documentation standards. Read when no agency-specific policy is provided, or to
   supplement agency policy on a specific topic (forensic standard, controlled
   substances, transfer of care).
+- `references/narrative-formats.md` -- Section definitions and quality checklists
+  for every supported narrative format. Read when the active format is anything
+  other than the default SOAP-with-Clinical-Summary.
