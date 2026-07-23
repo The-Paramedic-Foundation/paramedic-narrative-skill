@@ -1,0 +1,70 @@
+EMS DICTATION POCKET CARD
+Talk through these 12 in any order. Fragments are fine.
+Skip what's on the monitor upload or in structured fields.
+
+1. CALL FRAME
+   Unit / dispatch complaint / response mode
+   Scene type / other agencies + their role
+   Delays and why
+
+2. ARRIVAL PICTURE
+   Where found, position, first impression
+   Who was present
+   Scene observations that shaped decisions
+
+3. PATIENT
+   Age / sex / est. weight
+   Baseline status if known
+
+4. STORY
+   Chief complaint in their words
+   Onset / duration / mechanism
+   Better-worse / before EMS arrived
+   Who gave history + reliability
+
+5. PERTINENT NEGATIVES
+   What the patient specifically DENIED
+
+6. EXAM HIGHLIGHTS
+   Only findings that drove decisions
+   or aren't in the Assessment tab
+
+7. NUMBERS
+   Vitals not on upload / trends
+   Anything abnormal + your read on why
+
+8. THINKING
+   Working diagnosis
+   What else you considered + why less likely
+   Protocol used (name or number)
+
+9. DOING
+   Each treatment + why
+   Anything withheld + why
+   Patient response
+
+10. MOVING
+    Transport decision + destination rationale
+    How moved / position + why
+    Condition on arrival
+
+11. HANDOFF
+    Report given to whom
+    Records, lines, devices, belongings
+
+12. EXCEPTIONS
+    Anything unusual / refused interventions
+    Delays / equipment issues
+    What a reviewer should understand
+
+--------------------------------------------------
+PHOTO SHORTCUTS: monitor screen, med vials, facility
+paperwork, glove notes. Snap it, send it, confirm the
+transcription.
+
+HOURS LATER? Just say so. You'll get targeted recall
+questions instead of a blank interview.
+
+RULES: If you can't recall it, say so. Gaps get marked
+[VERIFY], never filled in. You review and own every
+word before submission.
