@@ -177,18 +177,26 @@ Here is the simplest possible path to get started:
 
 **If you use Claude (claude.ai):**
 
-1. Go to the [Releases page](../../releases/latest) on this site. Click
-   `paramedic-narrative.skill` to download it. It will land in your Downloads folder.
-2. Go to [claude.ai](https://claude.ai) and sign in.
-3. Click **Projects** in the left sidebar, then **New Project**. Give it a short,
+1. Go to [claude.ai](https://claude.ai) and sign in.
+2. Click **Projects** in the left sidebar, then **New Project**. Give it a short,
    recognizable name -- something like **PCR Narratives** or **My Documentation
    Assistant**. You will come back to this Project every time you document a call,
    so name it something you will recognize instantly.
-4. Inside the Project, click the settings gear icon, find the **Skills** section,
-   click **Upload Skill**, and select the `paramedic-narrative.skill` file you
-   downloaded.
-5. That is it. Start a new conversation inside that Project whenever you need to
-   document a call.
+3. In the Project, open **Settings** and paste the full contents of
+   `system-prompt.md` (from this repository) into the **Instructions** field.
+4. In the Project's **Files** section, upload `paramedic-narrative/SKILL.md`
+   (choose UTF-8 if you're asked about encoding).
+5. Start a new conversation in the Project and say "I want to set up my provider
+   profile" -- the skill asks a few questions and remembers your name, credential,
+   and agency for every future session.
+6. That is it. Come back to this same Project whenever you need to document a call.
+
+This works identically whether you're on the Claude iOS app, the Android app, or
+a browser. Some accounts also have a separate **Skills** feature under Project
+Settings -- if yours does, you can instead download `paramedic-narrative.skill`
+from the [Releases page](../../releases/latest) and upload it there. If there is
+no Skills option, or the uploaded file shows up as unreadable text instead of an
+installed skill, your account doesn't have that feature -- use the steps above.
 
 **If you use ChatGPT:**
 
@@ -204,6 +212,9 @@ Knowledge File containing the full clinical reference standard.
    Knowledge File. This gives the GPT access to the full clinical documentation standard.
 5. Give it a recognizable name -- **Paramedic Narratives** or **PCR Assistant**.
 6. Click **Save**. Use that Custom GPT for every documentation session.
+7. In your first conversation, say "I want to set up my provider profile" -- paste
+   the resulting file below the Instructions field or upload it as an additional
+   Knowledge File.
 
 **If you use Google Gemini:**
 
@@ -212,6 +223,8 @@ Knowledge File containing the full clinical reference standard.
 3. Paste the copied text into the instructions field.
 4. Name it something recognizable -- **PCR Narratives** or **Paramedic Documentation**.
 5. Save. Use that Gem for every documentation session.
+6. In your first conversation, say "I want to set up my provider profile" and
+   paste the resulting file below your instructions.
 
 **If none of that makes sense yet:** go to
 [paramedicfoundation.org/resources/ai-documentation](https://paramedicfoundation.org/resources/ai-documentation/)
@@ -288,15 +301,31 @@ data handling policies.
 
 ## Installation
 
-### Claude (native skill format)
+### Claude
 
-1. Download `paramedic-narrative.skill` from the
-   [Releases](../../releases/latest) page
-2. In Claude.ai, open or create a Project
-3. Go to Project Settings > Skills > Upload Skill
-4. Upload the `.skill` file
+Claude.ai Projects support two setup methods. Which one is available depends on
+your account and plan, not on your device -- use the Files + Instructions method
+unless you've already confirmed your account has Skills.
+
+**Files + Instructions (works on every account):**
+1. In Claude.ai, open or create a Project, and go to Project **Settings**
+2. Paste the full contents of `system-prompt.md` from this repository into
+   the **Instructions** field
+3. Download `paramedic-narrative/SKILL.md` and any reference files you need
+   from `paramedic-narrative/references/` in this repository
+4. Upload them to the Project's **Files** section (choose UTF-8 if asked
+   about encoding)
 5. Optionally upload your agency documentation standard as a Project file
    (see [Configuration](#configuration))
+
+**Skill package (only if your account has this feature):**
+1. Download `paramedic-narrative.skill` from the
+   [Releases](../../releases/latest) page
+2. In the Project, look for a **Skills** option under Project Settings
+3. If you find it, upload the `.skill` file there
+4. If there is no Skills option, or the uploaded file shows up as unreadable
+   or garbled text instead of an installed skill, your account does not have
+   this feature -- use the Files + Instructions method above instead
 
 ### ChatGPT (Custom GPT -- two-file setup)
 
@@ -383,19 +412,21 @@ browser (Safari on iOS, Chrome on Android) instead:
    (or use your browser's share sheet to save to Files/Downloads)
 
 **Claude on mobile:**
-Uploading a Skill to a Project is currently a web/desktop-only feature -- the
-Claude iOS and Android apps do not yet support Skill uploads. The mobile app's
-Project view only exposes Project files and Instructions, not Skills. Do the
-Skill upload in a browser, then use the Claude app afterward.
-1. In a browser (phone or computer), go to claude.ai and open or create your
-   Project
-2. Go to the Releases page, download `paramedic-narrative.skill`, and upload
-   it to the Project via Project Settings > Skills > Upload Skill
-3. Open the Claude app on your phone and use that same Project -- the Skill
-   is active there even though the app can't manage the upload itself
-4. Your agency config can be uploaded as a Project file directly from the
-   Claude app, on mobile or otherwise -- that part of the Project view does
-   work on mobile
+Use the Files + Instructions method (see [Installation](#installation) above) --
+it works identically on the Claude iOS app, the Android app, and any browser,
+because Project Files and Instructions are both available from the phone app
+itself. No desktop or browser detour is required for this method.
+1. In the Claude app, open or create your Project and go to Project Settings
+2. Paste `system-prompt.md` into **Instructions**
+3. Download `paramedic-narrative/SKILL.md` (and any reference files you want)
+   using the phone browser steps above, then upload them to the Project's
+   **Files** section from the app
+4. Your agency config uploads the same way, directly from the Claude app
+
+The Skill-package method (`.skill` upload) is a separate, account-dependent
+feature. If you've confirmed your account has it, the upload step itself
+still needs a browser (see the note in [Installation](#installation)); the
+Claude app can then use the Project normally afterward.
 
 **ChatGPT on mobile:**
 Creating and editing a Custom GPT's Instructions and Knowledge Files is a
@@ -719,14 +750,19 @@ Updates are not automatic on any platform. When a new version is released, each
 provider updates their own installation:
 
 **Claude:**
-1. Download the new `paramedic-narrative.skill` from the
-   [Releases](../../releases/latest) page.
-2. In your Claude Project, go to **Settings > Skills**, remove the old
-   Paramedic-Narrative skill, and upload the new `.skill` file. This step
-   requires a browser (web or desktop) -- Skill management is not yet
-   available in the Claude iOS/Android app.
+1. In your Project's **Instructions** field, replace the old `system-prompt.md`
+   contents with the new version from this repository.
+2. In **Files**, remove the old `SKILL.md` (and any outdated reference files)
+   and upload the new ones -- don't leave both, or the assistant may consult
+   the outdated copy.
 3. Your provider profile, agency configuration files, and past conversations
-   are unaffected -- only the skill itself is replaced.
+   are unaffected -- only the instructions and reference files are replaced.
+4. This works the same on the Claude iOS app, the Android app, or a browser.
+
+If your account uses the Skill package instead: download the new
+`paramedic-narrative.skill` from the [Releases](../../releases/latest) page,
+remove the old skill under **Settings > Skills**, and upload the new file.
+This step requires a browser (web or desktop).
 
 **ChatGPT (Custom GPT):**
 1. Copy the new `chatgpt-instructions.md` and paste it over the old contents of
