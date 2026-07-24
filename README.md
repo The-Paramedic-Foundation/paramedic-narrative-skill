@@ -383,12 +383,19 @@ browser (Safari on iOS, Chrome on Android) instead:
    (or use your browser's share sheet to save to Files/Downloads)
 
 **Claude on mobile:**
-1. In your phone browser, go to the Releases page and tap the `.skill` file
-   link -- your browser will offer to download or open it
-2. Save it to your Files app (iOS) or Downloads (Android)
-3. Open the Claude app, go to your Project, tap **Settings** > **Skills** >
-   **Upload Skill**, and select the file from Files/Downloads
-4. To upload your agency config: same process, upload as a Project file
+Uploading a Skill to a Project is currently a web/desktop-only feature -- the
+Claude iOS and Android apps do not yet support Skill uploads. The mobile app's
+Project view only exposes Project files and Instructions, not Skills. Do the
+Skill upload in a browser, then use the Claude app afterward.
+1. In a browser (phone or computer), go to claude.ai and open or create your
+   Project
+2. Go to the Releases page, download `paramedic-narrative.skill`, and upload
+   it to the Project via Project Settings > Skills > Upload Skill
+3. Open the Claude app on your phone and use that same Project -- the Skill
+   is active there even though the app can't manage the upload itself
+4. Your agency config can be uploaded as a Project file directly from the
+   Claude app, on mobile or otherwise -- that part of the Project view does
+   work on mobile
 
 **ChatGPT on mobile:**
 Creating and editing a Custom GPT's Instructions and Knowledge Files is a
@@ -715,7 +722,9 @@ provider updates their own installation:
 1. Download the new `paramedic-narrative.skill` from the
    [Releases](../../releases/latest) page.
 2. In your Claude Project, go to **Settings > Skills**, remove the old
-   Paramedic-Narrative skill, and upload the new `.skill` file.
+   Paramedic-Narrative skill, and upload the new `.skill` file. This step
+   requires a browser (web or desktop) -- Skill management is not yet
+   available in the Claude iOS/Android app.
 3. Your provider profile, agency configuration files, and past conversations
    are unaffected -- only the skill itself is replaced.
 
