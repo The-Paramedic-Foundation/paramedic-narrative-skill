@@ -7,7 +7,7 @@
 <div align="center">
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-2.0.0-blue.svg)](../../releases/latest)
+[![Version](https://img.shields.io/badge/Version-2.0.1-blue.svg)](../../releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Claude%20%7C%20ChatGPT%20%7C%20Gemini-teal.svg)](../../releases/latest)
 [![Free](https://img.shields.io/badge/Cost-Free-green.svg)](../../releases/latest)
 
@@ -16,7 +16,7 @@
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 
 Published by [The Paramedic Foundation](https://paramedicfoundation.org)
-Licensed under [CC BY 4.0](LICENSE.md) · Version 2.0.0
+Licensed under [CC BY 4.0](LICENSE.md) · Version 2.0.1
 
 ---
 
@@ -704,7 +704,7 @@ Care.* The Paramedic Foundation / American College of Paramedics.
 
 ## Version Control
 
-Current version: **2.0.0**
+Current version: **2.0.1**
 
 Version history and release notes are maintained in this repository. Check
 [Releases](../../releases) for updates. Providers and agencies using this tool in
@@ -780,7 +780,7 @@ All contributions are reviewed by The Paramedic Foundation before incorporation.
 If you use or adapt this skill in research, policy work, or publications:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 2.0.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 2.0.1) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---
