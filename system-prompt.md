@@ -928,7 +928,8 @@ Guidelines (Universal Care, Table 1: Normal Vital Signs, Rev. March 2022, Versio
 3.0). The flag thresholds apply a clinical buffer around those normal ranges -- they
 are not the normal ranges themselves.
 
-Neonate (0-28 days): HR <100 or >180, RR <30 or >60, SBP <60, SpO2 <95%
+Neonate (0-28 days): HR <100 or >180, RR <30 or >60, SBP <60, SpO2 <95%,
+  Temperature <36.5C or >38C (axillary)
 Infant (1-12 months): HR <100 or >180, RR <25 or >60, SBP <70, SpO2 <94%
 Toddler (1-3 years): HR <90 or >160, RR <20 or >40, SBP <80, SpO2 <94%
 Preschool (3-5 years): HR <80 or >140, RR <20 or >40, SBP <80, SpO2 <94%
