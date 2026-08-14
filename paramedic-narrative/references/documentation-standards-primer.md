@@ -19,6 +19,12 @@ The patient care report serves multiple functions simultaneously:
   medical necessity. The narrative must establish why transport was necessary.
 - **Continuity of care**: If the patient returns to care or is transferred between
   facilities, prior PCRs inform subsequent providers.
+- **Regulatory and system reporting**: Structured PCR fields are extracted into
+  external datasets -- in the United States through NEMSIS and the state EMS data
+  system, and through equivalent mechanisms elsewhere. Those extracts become the
+  official record of what care the agency provided and, where applicable, of how
+  waivered or specially authorized acts were used. A structured entry is therefore
+  an attributed claim about who did what, not only an internal note.
 
 The narrative must serve all of these functions. A narrative that is thorough enough for
 clinical handoff but vague about medical necessity will fail the billing function. A
@@ -155,6 +161,101 @@ to repeat information back).
 
 ---
 
+## Multi-Agency and Prior-to-Arrival Care Attribution
+
+Care delivered during a single patient encounter is frequently not delivered by a
+single crew. First responders, partner agencies, sending facilities, law enforcement,
+family, and bystanders all deliver care that the documenting crew must account for
+without claiming.
+
+**The attribution boundary.** Structured ePCR entries assert that this crew performed
+this act, on this patient, at this time, and they feed external reporting under that
+attribution. A structured field may therefore contain only care this crew performed,
+after assuming responsibility for the patient, that actually occurred. Three
+categories fall outside it and are documented in the narrative instead:
+
+1. Care performed by a provider from another agency, including one directing care in
+   this crew's vehicle or during this crew's transport.
+2. Care performed before this crew arrived and assumed responsibility.
+3. Interventions prepared, drawn up, set up, or considered but not performed,
+   including alerts or activations considered but not called.
+
+**Narrative-only content is written out in full.** The usual instruction to reference
+rather than duplicate ("treatments as charted") assumes a structured entry exists to
+point at. For the three categories above no entry exists, so a reference leaves the
+act documented nowhere. Write what was done, by whom, dose and route where
+applicable, time or sequence where known, and the patient's response. Never write "as
+charted" for narrative-only content. If it is unclear whether an item was entered in
+a structured field, ask rather than assume.
+
+**Encounters directed by another agency's provider.** When a patient is in this
+crew's care or transport and another agency's provider is directing or delivering
+care, the encounter is documented to the same standard as any other. A cross-reference
+to the other agency's record is not documentation of this encounter. Document who was
+directing care by role and agency; what this crew did and under whose direction; each
+intervention the other provider performed, attributed to them, with the patient's
+response; and the documenting provider's own reasoning for the decisions that were
+theirs. Medical necessity for transport remains this crew's obligation to establish
+regardless of who directed clinical care.
+
+Describe what the other provider did and what was observed. Do not characterize their
+clinical reasoning. Where they stated a reason, quote or attribute it; where they did
+not, the reasoning is unavailable and the narrative is silent on it. Reasoning belongs
+only to the clinician who stated it.
+
+**Waivered, variance, and specially authorized acts.** Authorization for particular
+medications and procedures is often granted at the agency level rather than the
+provider level, through waivers, variances, pilot authorizations, protocol exceptions,
+or equivalent mechanisms. What is authorized, which body grants it, and how it must be
+reported vary by jurisdiction and by agency, and two agencies working the same call
+may hold different authorizations. Where such acts are reported through structured
+ePCR data, entering another agency's administration into this agency's structured
+fields causes a single act to be counted twice and attributes it to an agency that did
+not perform it.
+
+The rule is symmetric and does not depend on which jurisdiction's scheme applies: if
+this crew performed the act, it is a structured entry and the narrative carries the
+reasoning; if another agency's provider performed it, it is narrative-only, in full
+detail, attributed to them. When the performing agency is unclear, establish it before
+drafting and mark [VERIFY: performing agency] if it cannot be established. The agency
+configuration is the authoritative source for which acts this applies to locally.
+
+This applies to any encounter where the patient is in this crew's care or transport.
+It does not apply where another agency managed the patient entirely and this crew
+provided no transport and no hands-on care.
+
+**Care provided prior to arrival.** Care delivered before this crew assumed
+responsibility is not this crew's care and is not recreated as timestamped structured
+entries. Clinically significant prior care belongs in the narrative, or in the history
+section where the format provides one. Document what was done and by whom; when or in
+what sequence; the source of the information (direct observation, verbal report,
+transfer paperwork, family) and its reliability where in question; and the patient's
+status at the moment this crew assumed responsibility, which is the clinical hinge
+between their care and this crew's.
+
+This does not change how the patient's medical history, home medications, or
+long-standing prescribed therapies are documented. Those belong in the structured
+History and Medications fields as they always have. The distinction is between the
+patient's standing medical record and acute interventions performed by someone else
+during this episode of care.
+
+**Interventions prepared or considered but not performed.** Structured fields reflect
+what actually happened. A medication drawn up but never administered, a procedure
+prepared for but never attempted, and an alert considered but never called are not
+structured entries, and a free-text note attached to such an entry does not change how
+it is counted in aggregate reporting. Document in the narrative what was prepared or
+considered and on what basis; what changed (indication resolved, patient declined,
+contraindication identified, transfer of care intervened, medical direction advised
+otherwise); and the disposition of anything prepared. A controlled substance drawn and
+not administered requires the full waste trail even though nothing was given.
+
+**Attribution gaps are gaps.** If it is not established who performed an intervention,
+whether it occurred before or after this crew assumed responsibility, or whether a
+prepared medication was administered or wasted, mark it [VERIFY]. Never resolve an
+attribution question by assuming the documenting crew performed the act.
+
+---
+
 ## Transfer of Care
 
 The transfer of care section in the Plan must include:
@@ -165,6 +266,9 @@ The transfer of care section in the Plan must include:
 - Condition of patient at time of transfer (brief, not a full re-assessment)
 - Any items transferred with the patient (medications, belongings, oxygen, equipment)
 - Any items given to law enforcement or other agencies (forensic cases)
+- Care delivered by another agency's provider or before this crew assumed
+  responsibility, where the receiving team needs it. The receiving clinician needs to
+  know what the patient received, not which agency will chart it.
 
 Do not leave the transfer of care implied. "Report given to ED staff" is insufficient.
 "Verbal report given to receiving RN [name if obtained] in ED bay [number if known];
@@ -192,7 +296,8 @@ The IMIST-AMBO elements:
   during the encounter. GCS components for altered mental status. RASS if relevant.
 - **T -- Treatment and trends**: Interventions performed chronologically, patient
   response to each, and trend in condition. This is the core clinical reasoning
-  section of the handoff.
+  section of the handoff. Include interventions delivered by another agency's
+  provider or before this crew assumed responsibility, identified as such.
 - **A -- Allergies**: Known allergies and reaction type.
 - **M -- Medications**: Current medications relevant to the presenting problem.
   MAT, anticoagulants, antihypertensives, insulin, and psychotropic medications
@@ -337,6 +442,11 @@ For any airway intervention beyond BVM ventilation:
 For cardiac arrest:
 
 - Document presenting rhythm (first rhythm observed, not assumed)
+- Where resuscitation was already in progress on arrival, document the arrest history,
+  defibrillations, medications, and approximate duration of resuscitation before
+  arrival, attributed to whoever delivered them, and whether a pulse was present when
+  this crew assumed care. Summarize this in the narrative rather than recreating it as
+  structured entries (see Multi-Agency and Prior-to-Arrival Care Attribution)
 - Document CPR quality indicators if available (feedback device data, or provider
   assessment of rate and depth)
 - Document time to first defibrillation if applicable

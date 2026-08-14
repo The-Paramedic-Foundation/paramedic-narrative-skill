@@ -1,7 +1,7 @@
 # Paramedic-Narrative Skill — Agency Configuration Template
 
 **The Paramedic Foundation**
-paramedicfoundation.org · Version 2.0.1
+paramedicfoundation.org · Version 2.1.0
 
 ---
 
@@ -175,6 +175,59 @@ for billing purposes, mandatory scene time documentation, etc.]
 [Any specific language or documentation elements your billing department requires
 for clean claims -- e.g., "All non-emergency transports must include documentation
 of why the patient could not be transported by other means."]
+
+---
+
+## Section 4A: Structured-Field Scope and Attribution Boundary
+
+Structured ePCR entries are attributed entries: they assert that your crew performed
+an act, and where structured data is extracted for external reporting they become the
+record of what care your agency provided. This section tells the skill where your
+agency draws the line between structured entry and narrative, so that narrative-only
+care is written out in full rather than referenced as charted.
+
+**External Reporting Destinations:**
+[Where your structured ePCR data goes beyond internal use -- e.g., "NEMSIS via the
+Colorado state EMS registry," a provincial or national registry, a trauma or cardiac
+registry, a billing extract. State "none known" if you are not sure; do not guess.]
+
+**Waivered, Variance, or Specially Authorized Acts:**
+[Medications or procedures your agency is authorized to perform under a waiver,
+variance, pilot authorization, protocol exception, or equivalent, together with the
+authorizing body. These vary by jurisdiction and between agencies operating in the
+same area, so list yours specifically rather than assuming a regional norm. Example:
+"Ketamine for agitation and pain under a state health department waiver; blood product
+administration under a regional pilot authorization." State "none" if none apply.]
+
+**Partner-Agency Care:**
+[Your rule for care performed by a provider from another agency while the patient is
+in your crew's care or transport. The skill's default: document the complete encounter
+to your normal standard, add the partner provider to the personnel record attributed
+to the interventions they performed, designate them as lead where they directed care,
+and keep their waivered or specially authorized acts in the narrative rather than in
+structured fields. Note any deviation, and any encounter type this does not apply to
+-- typically a true assist where another agency managed the patient entirely and your
+crew provided no transport and no hands-on care.]
+
+**Prior-to-Arrival Care:**
+[Your rule for care delivered before your crew assumed responsibility -- by first
+responders, a sending facility, another agency, law enforcement, family, or
+bystanders. The skill's default: summarize clinically significant prior care in the
+narrative, attributed to whoever delivered it, rather than recreating it as
+timestamped structured entries. Standing medical history and home medications are
+unaffected and stay in the structured History and Medications fields.]
+
+**Interventions Prepared or Considered but Not Performed:**
+[Your rule for a medication drawn but not administered, a procedure prepared but not
+attempted, or an alert considered but not activated. The skill's default: no
+structured entry; the reasoning goes in the narrative, and a controlled substance
+drawn and not given still requires the full waste trail.]
+
+**Other Structured-Field Restrictions:**
+[Anything else your agency excludes from structured entry, and why. If a restriction
+exists because of how the field is counted downstream rather than for clinical
+reasons, say so -- it helps providers apply the rule correctly in cases you have not
+anticipated.]
 
 ---
 
@@ -450,5 +503,5 @@ by authorized providers under the clinical direction of [Chief Paramedic Name].*
 *paramedicfoundation.org · info@paramedicfoundation.org*
 
 *Cite as: Nudell, N. G. (2026). Paramedic-Narrative skill — agency configuration*
-*template (Version 2.0.1) [Software configuration template]. The Paramedic*
+*template (Version 2.1.0) [Software configuration template]. The Paramedic*
 *Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill*

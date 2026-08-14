@@ -1,6 +1,6 @@
 # Narrative Formats Reference
 
-**The Paramedic Foundation** · paramedicfoundation.org · Version 2.0.1
+**The Paramedic Foundation** · paramedicfoundation.org · Version 2.1.0
 
 Section definitions and quality checklists for every narrative format supported by
 the Paramedic-Narrative skill. The active format is declared in the agency
@@ -11,10 +11,16 @@ Summary is the default.
 
 - All core standards apply regardless of format: never invent detail, [VERIFY]
   tagging, ABC/LOC cluster treatment, medication administration standard,
-  controlled substance audit trail, forensic and evidentiary standard, scoring
-  tools documentation, style rules, and the standing provider review disclaimer.
+  controlled substance audit trail, attribution and data-integrity boundary,
+  forensic and evidentiary standard, scoring tools documentation, style rules, and
+  the standing provider review disclaimer.
 - The narrative explains WHY; structured ePCR fields hold WHAT and WHEN. No format
   is an excuse to restate structured data.
+- The exception is content that structured fields must not contain: care performed
+  by another agency's provider, care performed before the crew assumed
+  responsibility, and interventions prepared or considered but not performed. That
+  content is narrative-only, is written out in full including what and when, and is
+  never referenced as charted. This holds in every format below.
 - Each fact appears once, in the section where it does the most work.
 - The Clinical Summary statement is an optional labeled opening paragraph
   compatible with every format below.
@@ -30,9 +36,12 @@ format-specific checklist):**
    protocol or CPG named.
 6. Medication and controlled substance standards met when applicable.
 7. Forensic standard applied when triggered.
-8. Transfer of care documented: receiving provider, condition at transfer, items
+8. Attribution correct: every intervention traceable to who performed it; nothing
+   performed by another agency or before arrival referenced as charted; anything
+   prepared or considered but not performed accounted for in the narrative.
+9. Transfer of care documented: receiving provider, condition at transfer, items
    transferred.
-9. Standing provider review disclaimer appended.
+10. Standing provider review disclaimer appended.
 
 ---
 
@@ -270,7 +279,11 @@ Care during transport / Arrival and handoff
   transfer, medical necessity for the level of transport (why this level of care
   and crew configuration was required).
 - **Sending report**: Who gave report, patient course at sending facility as
-  reported, records, imaging, and belongings accompanying the patient.
+  reported, records, imaging, and belongings accompanying the patient. Care the
+  sending facility initiated before the transport crew assumed responsibility --
+  medications given, infusions started and their rates, procedures performed --
+  belongs here in full, attributed to the sending facility, and is not recreated as
+  structured entries under the transport crew's attribution.
 - **Patient at transfer**: Condition at time of custody transfer to the transport
   crew, lines, drips with rates, devices, airway status, monitoring in place.
 - **Care during transport**: Monitoring, titrations, interventions en route with
@@ -280,8 +293,9 @@ Care during transport / Arrival and handoff
   role), report given, lines/devices/records/belongings transferred.
 
 **Checklist:** medical necessity for transport level explicit; every line, drip,
-and device accounted for at both ends; en route changes paired with rationale and
-response.
+and device accounted for at both ends; sending-facility care attributed to the
+sending facility and not charted as the transport crew's; en route changes paired
+with rationale and response.
 
 ---
 

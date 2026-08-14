@@ -7,7 +7,7 @@
 <div align="center">
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-2.0.1-blue.svg)](../../releases/latest)
+[![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg)](../../releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Claude%20%7C%20ChatGPT%20%7C%20Gemini-teal.svg)](../../releases/latest)
 [![Free](https://img.shields.io/badge/Cost-Free-green.svg)](../../releases/latest)
 
@@ -16,7 +16,7 @@
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 
 Published by [The Paramedic Foundation](https://paramedicfoundation.org)
-Licensed under [CC BY 4.0](LICENSE.md) · Version 2.0.1
+Licensed under [CC BY 4.0](LICENSE.md) · Version 2.1.0
 
 ---
 
@@ -113,6 +113,7 @@ paramedic-narrative-skill/          ← the repository (this whole page)
 ├── README.md                       ← this file -- start here
 ├── ETHICS.md                       ← ethical framework -- read before use
 ├── LICENSE.md                      ← CC BY 4.0 license terms
+├── claude-project-instructions.md  ← compact Instructions field for a Claude Project
 ├── system-prompt.md                ← full system prompt for Gemini, direct API,
 │                                     and any platform without a character limit
 ├── chatgpt-instructions.md         ← condensed instructions for ChatGPT Custom
@@ -183,9 +184,19 @@ Here is the simplest possible path to get started:
    Assistant**. You will come back to this Project every time you document a call,
    so name it something you will recognize instantly.
 3. In the Project, open **Settings** and paste the full contents of
-   `system-prompt.md` (from this repository) into the **Instructions** field.
-4. In the Project's **Files** section, upload `paramedic-narrative/SKILL.md`
-   (choose UTF-8 if you're asked about encoding).
+   `claude-project-instructions.md` (everything below the horizontal rule) into
+   the **Instructions** field.
+4. In the Project's **Files** section, upload `paramedic-narrative/SKILL.md` and
+   both files in `paramedic-narrative/references/` (choose UTF-8 if you're asked
+   about encoding).
+
+   Do not paste `system-prompt.md` into a Claude Project. It contains everything
+   SKILL.md already contains, and the Instructions field is re-sent with every
+   message, so you would pay for the whole standard on every turn and the two
+   copies would drift apart when one is updated. `claude-project-instructions.md`
+   carries only the rules that must be in context at all times and points to the
+   project files for the rest. `system-prompt.md` is for platforms with no file
+   retrieval.
 5. Start a new conversation in the Project and say "I want to set up my provider
    profile" -- the skill asks a few questions and remembers your name, credential,
    and agency for every future session.
@@ -700,6 +711,7 @@ or fatality, and any scene where law enforcement is investigating.
 |---|---|---|
 | `paramedic-narrative.skill` | Native skill package | Claude |
 | `chatgpt-instructions.md` | Condensed instructions (fits character limit) | ChatGPT, Copilot |
+| `claude-project-instructions.md` | Compact Instructions field; points to project files | Claude Projects |
 | `system-prompt.md` | Full system prompt | Gemini, direct API, any LLM |
 | `paramedic-narrative/SKILL.md` | Full clinical reference standard | ChatGPT Knowledge File, Copilot per-session paste, all (human-readable) |
 | `paramedic-narrative/references/documentation-standards-primer.md` | Standards reference | Loaded on demand |
@@ -735,7 +747,24 @@ Care.* The Paramedic Foundation / American College of Paramedics.
 
 ## Version Control
 
-Current version: **2.0.1**
+Current version: **2.1.0**
+
+**2.1.0 -- Attribution and data-integrity boundary.** Adds a core section covering
+care performed by another agency's provider, care performed before the documenting
+crew arrived and assumed responsibility, and interventions prepared or considered but
+not performed. Structured ePCR entries are attributed entries and, where structured
+data feeds external reporting, become the record of what an agency provided; the three
+categories above therefore stay out of structured fields and are carried in full by
+the narrative. Core Operating Principle 1 now extends the non-fabrication rule to
+other clinicians' clinical reasoning. Core Operating Principle 5 now requires
+confirming that a structured entry exists before referencing it, which closes a real
+failure mode: a narrative that says "as charted" for an intervention the agency's own
+standard forbids charting leaves that intervention documented nowhere. Related changes
+in the medication administration standard, workflow prompts, dictation pocket card,
+narrative formats, primer, and a new agency configuration Section 4A. Updating from
+2.0.x replaces the instruction and reference files only; provider profiles and
+existing agency configurations remain valid, though agencies should complete the new
+Section 4A.
 
 Version history and release notes are maintained in this repository. Check
 [Releases](../../releases) for updates. Providers and agencies using this tool in
@@ -750,11 +779,12 @@ Updates are not automatic on any platform. When a new version is released, each
 provider updates their own installation:
 
 **Claude:**
-1. In your Project's **Instructions** field, replace the old `system-prompt.md`
-   contents with the new version from this repository.
-2. In **Files**, remove the old `SKILL.md` (and any outdated reference files)
-   and upload the new ones -- don't leave both, or the assistant may consult
-   the outdated copy.
+1. In your Project's **Instructions** field, paste the new
+   `claude-project-instructions.md` over whatever is there now. If your Project
+   currently holds the full `system-prompt.md` in Instructions, replacing it with
+   this file is the upgrade: same standards, a fraction of the per-message cost.
+2. In **Files**, remove the old `SKILL.md` and reference files and upload the new
+   ones -- don't leave both, or the assistant may consult the outdated copy.
 3. Your provider profile, agency configuration files, and past conversations
    are unaffected -- only the instructions and reference files are replaced.
 4. This works the same on the Claude iOS app, the Android app, or a browser.
@@ -816,7 +846,7 @@ All contributions are reviewed by The Paramedic Foundation before incorporation.
 If you use or adapt this skill in research, policy work, or publications:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 2.0.1) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 2.1.0) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---
