@@ -1,11 +1,25 @@
-# Narrative Formats Reference
+CONSULT THIS FILE WHEN: drafting output; active format is not default SOAP; section definitions or quality checklist needed.
+DO NOT CONSULT OTHERWISE.
 
-**The Paramedic Foundation** · paramedicfoundation.org · Version 2.1.1
+## Output label rule
 
-Section definitions and quality checklists for every narrative format supported by
-the Paramedic-Narrative skill. The active format is declared in the agency
-configuration with per-call override. If no format is declared, SOAP with Clinical
-Summary is the default.
+Wherever a section is described below with a mnemonic single-letter heading
+(for example "S -- Subjective," "O -- Objective," "A -- Assessment,"
+"P -- Plan"), the letter is a mnemonic for the format's name only. It is never
+the label the provider sees in the chart. The literal output label -- the text
+actually placed in the draft -- is the full word, uppercase, followed by a
+colon, on its own line, with no single-letter prefix in any punctuation
+variant: CLINICAL SUMMARY:, SUBJECTIVE:, OBJECTIVE:, ASSESSMENT:, PLAN:. The
+same principle applies to any other format's section names: use the full
+section name as the output label, never an abbreviation or letter prefix.
+
+---
+
+## Format selection
+
+The active format is declared in the agency configuration, with per-call
+override -- a provider may say "use CHART for this one" at any time. If no
+format is declared, SOAP with Clinical Summary is the default.
 
 **Universal rules that apply in every format:**
 
@@ -314,5 +328,54 @@ forensic standards, or any other core safeguard, regardless of its wording.
 
 ---
 
-*Published by The Paramedic Foundation under CC BY 4.0.*
-*paramedicfoundation.org · info@paramedicfoundation.org*
+## Narrative Structure (default SOAP with Clinical Summary)
+
+The structure below describes the default SOAP-with-Clinical-Summary format. When
+another format is active, map the same content standards onto that format's
+sections per the format definitions above.
+
+### Clinical Summary (output label: CLINICAL SUMMARY:)
+Labeled opening paragraph. Self-contained. Demographics, chief complaint, key findings,
+working differential with rationale, other differentials considered. Brief. Name only
+findings that drive the differential.
+
+### Subjective (output label: SUBJECTIVE:)
+History not in structured fields. History source and reliability. Pertinent positives
+and negatives. Cognitive/communication status when relevant. Clinically significant
+care provided before this crew assumed responsibility, with its source and the
+patient's status at the transition, where the active format has no separate history
+section. For forensic cases: source-attributed statements, verbatim quotes where
+appropriate.
+
+### Objective (output label: OBJECTIVE:)
+ABC and LOC narrative treatment focused on quality, interrelationship, and trajectory
+(not restating measured values). Other scene observations relevant to clinical
+decision-making. Findings not in the Assessment tab. Reference structured data with
+phrases like "vitals and cardiac monitoring as charted." For forensic cases: observed
+physical findings stated as observations, scene observations stated factually without
+interpretation.
+
+### Assessment (output label: ASSESSMENT:)
+Protocol(s) or Clinical Practice Guideline(s) (CPGs) referenced by name or number.
+Where local protocols are not the sole basis for clinical decisions, national CPGs
+from sources such as NAEMSP, NASEMSO, or Chief Paramedic-adopted guidelines are
+appropriate references and should be named. Clinical reasoning connecting findings
+to working diagnosis. No restatement of Subjective or Objective content. Where
+another agency's provider directed clinical care, this section carries the
+documenting provider's own reasoning only, including medical necessity for
+transport; it does not attribute reasoning to the directing provider.
+
+### Plan (output label: PLAN:)
+Chronological. Rationale for treatments performed or withheld, including medication
+indication, dose calculation, response, and complication characterization. Controlled
+substance audit trail when applicable. Narrative-only interventions written out in
+full per the Attribution and Data-Integrity Boundary: care performed by another
+agency's provider, care performed before this crew assumed responsibility, and
+anything prepared or considered but not performed, each attributed to who performed
+or decided it. Patient response if not in flowchart reassessment, including ABC/LOC
+trajectory in response to intervention. Transport decision and rationale. Movement
+method. Position and rationale. Condition at destination. Transfer of care: document
+that a structured handoff was performed, using IMIST-AMBO framework where applied;
+for trauma patients, the handoff should meet the ATLS 11th edition standard for
+prehospital-to-hospital transfer. For forensic cases: chain of custody, what was
+preserved, items transferred to law enforcement or receiving facility.
