@@ -84,4 +84,4 @@ The Paramedic Foundation
 www.paramedicfoundation.org | info@paramedicfoundation.org
 Part of Paramedic-Narrative. Published by The Paramedic
 Foundation under CC BY 4.0. (c) 2026 The Paramedic Foundation
-Version 3 | Skill v2.1.1
+Version 3 | Skill v3.0.0
