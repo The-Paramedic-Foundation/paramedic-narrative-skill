@@ -932,6 +932,7 @@ omission is clinically meaningful.
   Scale, not a separate tool -- it is a general stroke screen, not a large-vessel
   occlusion (LVO) screen.
 - Los Angeles Prehospital Stroke Screen (LAPSS) if applied.
+- NIHSS components if assessed.
 - GCS component scores (eye, verbal, motor) when clinical reasoning requires the
   breakdown, not just the total.
 - VAN screen for large vessel occlusion consideration -- a distinct instrument

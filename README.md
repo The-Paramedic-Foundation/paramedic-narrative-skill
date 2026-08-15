@@ -7,7 +7,7 @@
 <div align="center">
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-2.1.0-blue.svg)](../../releases/latest)
+[![Version](https://img.shields.io/badge/Version-2.1.1-blue.svg)](../../releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Claude%20%7C%20ChatGPT%20%7C%20Gemini-teal.svg)](../../releases/latest)
 [![Free](https://img.shields.io/badge/Cost-Free-green.svg)](../../releases/latest)
 
@@ -16,7 +16,7 @@
 **AI-assisted PCR narrative documentation for paramedics and EMTs**
 
 Published by [The Paramedic Foundation](https://paramedicfoundation.org)
-Licensed under [CC BY 4.0](LICENSE.md) · Version 2.1.0
+Licensed under [CC BY 4.0](LICENSE.md) · Version 2.1.1
 
 ---
 
@@ -89,15 +89,22 @@ Read [ETHICS.md](ETHICS.md) before use.
 - Applies an elevated evidentiary standard for forensic and high-acuity calls
 - Documents controlled substance audit trail elements the provider supplies
 - Flags missing information as [VERIFY] rather than inventing it
+- Keeps care performed by another agency, care performed before arrival, and
+  interventions prepared but not performed out of structured fields and written
+  out in full in the narrative, attributed to whoever performed them
+- Keeps each patient's facts separate from every other patient's in a
+  multi-patient incident
 - Applies universal paramedicine documentation standards when no agency policy is
   provided
 
 ## What This Tool Does Not Do
 
 - Does not make or support clinical decisions of any kind
-- Does not access PCR platforms or submit documents
+- Does not access ePCR platforms or submit documents
 - Does not invent, assume, or infer clinical detail
 - Does not reproduce information already in structured fields
+- Does not reference a structured field entry that does not exist
+- Does not assume the documenting crew performed an act whose performer is unstated
 - Does not fabricate controlled substance audit trail elements
 - Does not provide clinical advice
 
@@ -700,8 +707,9 @@ automatically applies an elevated evidentiary standard:
 
 Call types that trigger this standard include: assault, domestic violence, sexual
 assault, child or vulnerable adult abuse, suspicious death, gunshot or stab wound,
-suspected non-accidental trauma, motor vehicle collision with potential impairment
-or fatality, and any scene where law enforcement is investigating.
+suspected non-accidental trauma, intoxication-related harm, arson, motor vehicle
+collision with potential impairment or fatality, threats, and any scene where law
+enforcement is investigating.
 
 ---
 
@@ -747,7 +755,26 @@ Care.* The Paramedic Foundation / American College of Paramedics.
 
 ## Version Control
 
-Current version: **2.1.0**
+Current version: **2.1.1**
+
+**2.1.1 -- Cross-file parity corrections.** No change to clinical content, thresholds,
+or standards, so agencies that have reviewed 2.1.0 carry no re-verification burden.
+An audit of all instruction files found that safety-critical text had been paraphrased
+into the platform-specific renderings rather than reproduced, and the paraphrases had
+lost content. Corrected: `chatgpt-instructions.md` regains the full eleven-item
+forensic trigger list (it had carried five, omitting domestic violence and sexual
+assault among others), the complete standing disclaimer including the AI-tool and
+no-clinical-advice sentences, the camera-metadata PHI rule, the container-identifier
+and reconciliation elements of the controlled substance audit trail, the pre-draft
+verification step as an explicit workflow step, and the rule against assuming your
+crew performed an act whose performer is unstated. `system-prompt.md` regains
+"threats" in the forensic trigger list and the neonate temperature threshold, and now
+uses "Chief Paramedic" rather than "medical director."
+`claude-project-instructions.md` now carries incident and patient workspace isolation
+inline rather than only by reference to a project file, since retrieval is not
+guaranteed. The dictation pocket card and its printable variants gain the attribution
+prompts that 2.1.0 described but did not ship. Updating from 2.1.0 replaces the
+instruction and reference files only.
 
 **2.1.0 -- Attribution and data-integrity boundary.** Adds a core section covering
 care performed by another agency's provider, care performed before the documenting
@@ -846,7 +873,7 @@ All contributions are reviewed by The Paramedic Foundation before incorporation.
 If you use or adapt this skill in research, policy work, or publications:
 
 > Nudell, N. G. (2026). *paramedic-narrative-skill: AI-assisted PCR narrative*
-> *documentation for paramedics and EMTs* (Version 2.1.0) [Software]. The Paramedic
+> *documentation for paramedics and EMTs* (Version 2.1.1) [Software]. The Paramedic
 > Foundation. https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 ---

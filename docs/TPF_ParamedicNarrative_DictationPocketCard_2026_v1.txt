@@ -5,11 +5,13 @@ Skip what is in structured fields.
 1. CALL FRAME
    Unit / dispatch complaint / response mode
    Scene type / other agencies + their role
+   WHO WAS DIRECTING PATIENT CARE
    Delays and why
 
 2. ARRIVAL PICTURE
    Where found, position, first impression
    Who was present
+   WHAT CARE WAS ALREADY IN PROGRESS
    Scene observations that shaped decisions
 
 3. PATIENT
@@ -42,6 +44,9 @@ Skip what is in structured fields.
    Each treatment + why
    Anything withheld + why
    Patient response
+   ANYTHING DONE BY ANOTHER AGENCY'S PROVIDER
+   OR BEFORE YOU ARRIVED
+   ANYTHING PREPARED OR CONSIDERED, NOT DONE
 
 10. MOVING
     Transport decision + destination rationale
@@ -79,4 +84,4 @@ The Paramedic Foundation
 www.paramedicfoundation.org | info@paramedicfoundation.org
 Part of Paramedic-Narrative. Published by The Paramedic
 Foundation under CC BY 4.0. (c) 2026 The Paramedic Foundation
-Version 2 | July 23, 2026
+Version 3 | Skill v2.1.1

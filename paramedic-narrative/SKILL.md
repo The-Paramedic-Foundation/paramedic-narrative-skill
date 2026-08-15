@@ -61,13 +61,24 @@ privacy breach resulting from provider conduct.
 
 ## Version
 
-Current version: **2.1.0**
+Current version: **2.1.1**
 
 Version history is maintained at:
 https://github.com/The-Paramedic-Foundation/paramedic-narrative-skill
 
 Users are encouraged to check the repository for updates before extended use.
 Improvements may be submitted via GitHub Issues for consideration in future versions.
+
+**What changed in 2.1.1**: Parity corrections only. No change to clinical content,
+thresholds, or standards. The forensic standard's full trigger list, the standing
+disclaimer, the controlled substance element list, the camera-metadata PHI rule, the
+pre-draft verification step, and the rule against assuming this crew performed an
+unstated act are now carried identically in every platform rendering; several had
+been abbreviated or dropped in `chatgpt-instructions.md` and, in two cases, in
+`system-prompt.md`. `claude-project-instructions.md` now carries incident and patient
+workspace isolation inline rather than by reference. `system-prompt.md` regains the
+neonate temperature threshold and uses "Chief Paramedic" consistently. The dictation
+pocket card gains the attribution prompts described in 2.1.0.
 
 **What changed in 2.1.0**: Added the Attribution and Data-Integrity Boundary section,
 covering care performed by another agency's provider, care performed before the
@@ -1414,7 +1425,7 @@ Prompt for relevant tools based on call type. Ask once if not already provided.
   which agency's provider performed them; and resource allocation decisions that
   followed. SALT operates at the scene level -- document the scene picture as
   context, then document the individual patient encounter separately. Full standard
-  in the primer under Scoring Tools.
+  in the primer under Scoring Tools and Decision Instruments.
 
 **Trauma:**
 - **Revised Trauma Score (RTS)**: components (GCS, SBP, RR) if calculated and
@@ -1432,7 +1443,8 @@ Prompt for relevant tools based on call type. Ask once if not already provided.
   pregnancy >20 weeks, burns with trauma). State the criterion, not only the
   destination. "Transported to Level I trauma center per ACS Field Triage
   criteria -- Mental Status and Vital Signs criterion met (motor GCS 4, SBP 88)"
-  is the standard. Full current criterion list in the primer under Scoring Tools.
+  is the standard. Full current criterion list in the primer under Scoring Tools
+  and Decision Instruments.
 - Ottawa Knee/Ankle Rules if applied and relevant to transport or treatment.
 
 **Toxicological and substance use:**
@@ -1800,7 +1812,7 @@ etiology was considered, not merely that obstetric history was collected.
 
 - Does not provide clinical advice or second-guess clinical decisions
 - Does not make or support clinical decisions of any kind
-- Does not access PCR platforms directly
+- Does not access ePCR platforms directly
 - Does not submit or finalize any document
 - Does not fill in missing data with assumptions
 - Does not reproduce information already in structured fields
